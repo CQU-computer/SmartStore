@@ -9,94 +9,152 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-11-->D:\SmartStore\app\src\main\AndroidManifest.xml:4:5-78
-11-->D:\SmartStore\app\src\main\AndroidManifest.xml:4:22-75
+11-->F:\SmartStore\app\src\main\AndroidManifest.xml:5:5-78
+11-->F:\SmartStore\app\src\main\AndroidManifest.xml:5:22-75
 12
 13    <permission
-13-->[androidx.core:core:1.9.0] C:\Users\zzw15\.gradle\caches\transforms-3\16088aea6844a21f0ae8707202a192eb\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+13-->[androidx.core:core:1.9.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\16088aea6844a21f0ae8707202a192eb\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
 14        android:name="com.example.smartstore.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-14-->[androidx.core:core:1.9.0] C:\Users\zzw15\.gradle\caches\transforms-3\16088aea6844a21f0ae8707202a192eb\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+14-->[androidx.core:core:1.9.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\16088aea6844a21f0ae8707202a192eb\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
 15        android:protectionLevel="signature" />
-15-->[androidx.core:core:1.9.0] C:\Users\zzw15\.gradle\caches\transforms-3\16088aea6844a21f0ae8707202a192eb\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+15-->[androidx.core:core:1.9.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\16088aea6844a21f0ae8707202a192eb\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
 16
 17    <uses-permission android:name="com.example.smartstore.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-17-->[androidx.core:core:1.9.0] C:\Users\zzw15\.gradle\caches\transforms-3\16088aea6844a21f0ae8707202a192eb\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-17-->[androidx.core:core:1.9.0] C:\Users\zzw15\.gradle\caches\transforms-3\16088aea6844a21f0ae8707202a192eb\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+17-->[androidx.core:core:1.9.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\16088aea6844a21f0ae8707202a192eb\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+17-->[androidx.core:core:1.9.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\16088aea6844a21f0ae8707202a192eb\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 18
 19    <application
-19-->D:\SmartStore\app\src\main\AndroidManifest.xml:6:5-30:19
+19-->F:\SmartStore\app\src\main\AndroidManifest.xml:7:5-37:19
 20        android:allowBackup="true"
-20-->D:\SmartStore\app\src\main\AndroidManifest.xml:7:9-35
+20-->F:\SmartStore\app\src\main\AndroidManifest.xml:8:9-35
 21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-21-->[androidx.core:core:1.9.0] C:\Users\zzw15\.gradle\caches\transforms-3\16088aea6844a21f0ae8707202a192eb\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+21-->[androidx.core:core:1.9.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\16088aea6844a21f0ae8707202a192eb\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 22        android:dataExtractionRules="@xml/data_extraction_rules"
-22-->D:\SmartStore\app\src\main\AndroidManifest.xml:8:9-65
+22-->F:\SmartStore\app\src\main\AndroidManifest.xml:9:9-65
 23        android:debuggable="true"
 24        android:extractNativeLibs="false"
 25        android:fullBackupContent="@xml/backup_rules"
-25-->D:\SmartStore\app\src\main\AndroidManifest.xml:9:9-54
+25-->F:\SmartStore\app\src\main\AndroidManifest.xml:10:9-54
 26        android:icon="@mipmap/ic_launcher"
-26-->D:\SmartStore\app\src\main\AndroidManifest.xml:10:9-43
+26-->F:\SmartStore\app\src\main\AndroidManifest.xml:11:9-43
 27        android:label="@string/app_name"
-27-->D:\SmartStore\app\src\main\AndroidManifest.xml:11:9-41
+27-->F:\SmartStore\app\src\main\AndroidManifest.xml:12:9-41
 28        android:roundIcon="@mipmap/ic_launcher_round"
-28-->D:\SmartStore\app\src\main\AndroidManifest.xml:12:9-54
+28-->F:\SmartStore\app\src\main\AndroidManifest.xml:13:9-54
 29        android:supportsRtl="true"
-29-->D:\SmartStore\app\src\main\AndroidManifest.xml:13:9-35
+29-->F:\SmartStore\app\src\main\AndroidManifest.xml:14:9-35
 30        android:testOnly="true"
-31        android:theme="@style/Theme.SmartStore" >
-31-->D:\SmartStore\app\src\main\AndroidManifest.xml:14:9-48
-32        <activity android:name="com.example.smartstore.discription_dialog" />
-32-->D:\SmartStore\app\src\main\AndroidManifest.xml:17:9-55
-32-->D:\SmartStore\app\src\main\AndroidManifest.xml:17:19-53
-33        <activity android:name="search.search" />
-33-->D:\SmartStore\app\src\main\AndroidManifest.xml:18:9-49
-33-->D:\SmartStore\app\src\main\AndroidManifest.xml:18:19-47
-34        <activity android:name="in_out_rcd.in_out_rcd" />
-34-->D:\SmartStore\app\src\main\AndroidManifest.xml:19:9-57
-34-->D:\SmartStore\app\src\main\AndroidManifest.xml:19:19-55
-35        <activity android:name="com.example.smartstore.MainActivity" />
-35-->D:\SmartStore\app\src\main\AndroidManifest.xml:20:9-49
-35-->D:\SmartStore\app\src\main\AndroidManifest.xml:20:19-47
-36        <activity
-36-->D:\SmartStore\app\src\main\AndroidManifest.xml:21:9-29:20
-37            android:name="com.example.smartstore.mine_page"
-37-->D:\SmartStore\app\src\main\AndroidManifest.xml:22:13-38
-38            android:exported="true" >
-38-->D:\SmartStore\app\src\main\AndroidManifest.xml:23:13-36
-39            <intent-filter>
-39-->D:\SmartStore\app\src\main\AndroidManifest.xml:24:13-28:29
-40                <action android:name="android.intent.action.MAIN" />
-40-->D:\SmartStore\app\src\main\AndroidManifest.xml:25:17-69
-40-->D:\SmartStore\app\src\main\AndroidManifest.xml:25:25-66
-41
-42                <category android:name="android.intent.category.LAUNCHER" />
-42-->D:\SmartStore\app\src\main\AndroidManifest.xml:27:17-77
-42-->D:\SmartStore\app\src\main\AndroidManifest.xml:27:27-74
-43            </intent-filter>
-44        </activity>
-45
-46        <provider
-46-->[androidx.emoji2:emoji2:1.2.0] C:\Users\zzw15\.gradle\caches\transforms-3\22471b7f7dfe28d311c0d565698a5013\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-47            android:name="androidx.startup.InitializationProvider"
-47-->[androidx.emoji2:emoji2:1.2.0] C:\Users\zzw15\.gradle\caches\transforms-3\22471b7f7dfe28d311c0d565698a5013\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
-48            android:authorities="com.example.smartstore.androidx-startup"
-48-->[androidx.emoji2:emoji2:1.2.0] C:\Users\zzw15\.gradle\caches\transforms-3\22471b7f7dfe28d311c0d565698a5013\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
-49            android:exported="false" >
-49-->[androidx.emoji2:emoji2:1.2.0] C:\Users\zzw15\.gradle\caches\transforms-3\22471b7f7dfe28d311c0d565698a5013\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
-50            <meta-data
-50-->[androidx.emoji2:emoji2:1.2.0] C:\Users\zzw15\.gradle\caches\transforms-3\22471b7f7dfe28d311c0d565698a5013\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-51                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-51-->[androidx.emoji2:emoji2:1.2.0] C:\Users\zzw15\.gradle\caches\transforms-3\22471b7f7dfe28d311c0d565698a5013\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
-52                android:value="androidx.startup" />
-52-->[androidx.emoji2:emoji2:1.2.0] C:\Users\zzw15\.gradle\caches\transforms-3\22471b7f7dfe28d311c0d565698a5013\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
-53            <meta-data
-53-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\zzw15\.gradle\caches\transforms-3\352508cb14b68250e6ee0ae180f6bf94\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-54                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-54-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\zzw15\.gradle\caches\transforms-3\352508cb14b68250e6ee0ae180f6bf94\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-55                android:value="androidx.startup" />
-55-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\zzw15\.gradle\caches\transforms-3\352508cb14b68250e6ee0ae180f6bf94\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-56        </provider>
-57    </application>
-58
-59</manifest>
+31        android:theme="@style/Theme.Design.NoActionBar" >
+31-->F:\SmartStore\app\src\main\AndroidManifest.xml:15:9-56
+32        <activity
+32-->F:\SmartStore\app\src\main\AndroidManifest.xml:17:9-19:39
+33            android:name="chattingcircle.Chattingcircle_recommend"
+33-->F:\SmartStore\app\src\main\AndroidManifest.xml:18:13-67
+34            android:exported="true" />
+34-->F:\SmartStore\app\src\main\AndroidManifest.xml:19:13-36
+35        <activity
+35-->F:\SmartStore\app\src\main\AndroidManifest.xml:20:9-23:54
+36            android:name="chattingcircle.ChattingCircle"
+36-->F:\SmartStore\app\src\main\AndroidManifest.xml:21:13-57
+37            android:exported="true"
+37-->F:\SmartStore\app\src\main\AndroidManifest.xml:22:13-36
+38            android:windowSoftInputMode="adjustPan" />
+38-->F:\SmartStore\app\src\main\AndroidManifest.xml:23:13-52
+39        <activity android:name="com.example.smartstore.discription_dialog" />
+39-->F:\SmartStore\app\src\main\AndroidManifest.xml:24:9-56
+39-->F:\SmartStore\app\src\main\AndroidManifest.xml:24:19-53
+40        <activity android:name="search.search" />
+40-->F:\SmartStore\app\src\main\AndroidManifest.xml:25:9-50
+40-->F:\SmartStore\app\src\main\AndroidManifest.xml:25:19-47
+41        <activity android:name="in_out_rcd.in_out_rcd" />
+41-->F:\SmartStore\app\src\main\AndroidManifest.xml:26:9-58
+41-->F:\SmartStore\app\src\main\AndroidManifest.xml:26:19-55
+42        <activity android:name="com.example.smartstore.MainActivity" />
+42-->F:\SmartStore\app\src\main\AndroidManifest.xml:27:9-50
+42-->F:\SmartStore\app\src\main\AndroidManifest.xml:27:19-47
+43        <activity
+43-->F:\SmartStore\app\src\main\AndroidManifest.xml:28:9-36:20
+44            android:name="com.example.smartstore.mine_page"
+44-->F:\SmartStore\app\src\main\AndroidManifest.xml:29:13-38
+45            android:exported="true" >
+45-->F:\SmartStore\app\src\main\AndroidManifest.xml:30:13-36
+46            <intent-filter>
+46-->F:\SmartStore\app\src\main\AndroidManifest.xml:31:13-35:29
+47                <action android:name="android.intent.action.MAIN" />
+47-->F:\SmartStore\app\src\main\AndroidManifest.xml:32:17-69
+47-->F:\SmartStore\app\src\main\AndroidManifest.xml:32:25-66
+48
+49                <category android:name="android.intent.category.LAUNCHER" />
+49-->F:\SmartStore\app\src\main\AndroidManifest.xml:34:17-77
+49-->F:\SmartStore\app\src\main\AndroidManifest.xml:34:27-74
+50            </intent-filter>
+51        </activity>
+52
+53        <provider
+53-->[androidx.emoji2:emoji2:1.2.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\22471b7f7dfe28d311c0d565698a5013\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+54            android:name="androidx.startup.InitializationProvider"
+54-->[androidx.emoji2:emoji2:1.2.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\22471b7f7dfe28d311c0d565698a5013\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+55            android:authorities="com.example.smartstore.androidx-startup"
+55-->[androidx.emoji2:emoji2:1.2.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\22471b7f7dfe28d311c0d565698a5013\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+56            android:exported="false" >
+56-->[androidx.emoji2:emoji2:1.2.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\22471b7f7dfe28d311c0d565698a5013\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+57            <meta-data
+57-->[androidx.emoji2:emoji2:1.2.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\22471b7f7dfe28d311c0d565698a5013\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+58                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+58-->[androidx.emoji2:emoji2:1.2.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\22471b7f7dfe28d311c0d565698a5013\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+59                android:value="androidx.startup" />
+59-->[androidx.emoji2:emoji2:1.2.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\22471b7f7dfe28d311c0d565698a5013\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+60            <meta-data
+60-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\鲂酾泷\.gradle\caches\transforms-3\3817279e60fe086269260dfebf4a0fef\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+61                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+61-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\鲂酾泷\.gradle\caches\transforms-3\3817279e60fe086269260dfebf4a0fef\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+62                android:value="androidx.startup" />
+62-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\鲂酾泷\.gradle\caches\transforms-3\3817279e60fe086269260dfebf4a0fef\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+63            <meta-data
+63-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\def5da3f11daed38c7ed8dad086bc0e6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+64                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+64-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\def5da3f11daed38c7ed8dad086bc0e6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+65                android:value="androidx.startup" />
+65-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\def5da3f11daed38c7ed8dad086bc0e6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+66        </provider>
+67
+68        <receiver
+68-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\def5da3f11daed38c7ed8dad086bc0e6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+69            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+69-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\def5da3f11daed38c7ed8dad086bc0e6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+70            android:directBootAware="false"
+70-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\def5da3f11daed38c7ed8dad086bc0e6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+71            android:enabled="true"
+71-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\def5da3f11daed38c7ed8dad086bc0e6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+72            android:exported="true"
+72-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\def5da3f11daed38c7ed8dad086bc0e6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+73            android:permission="android.permission.DUMP" >
+73-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\def5da3f11daed38c7ed8dad086bc0e6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+74            <intent-filter>
+74-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\def5da3f11daed38c7ed8dad086bc0e6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+75                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+75-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\def5da3f11daed38c7ed8dad086bc0e6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+75-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\def5da3f11daed38c7ed8dad086bc0e6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+76            </intent-filter>
+77            <intent-filter>
+77-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\def5da3f11daed38c7ed8dad086bc0e6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+78                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+78-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\def5da3f11daed38c7ed8dad086bc0e6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+78-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\def5da3f11daed38c7ed8dad086bc0e6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+79            </intent-filter>
+80            <intent-filter>
+80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\def5da3f11daed38c7ed8dad086bc0e6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+81                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\def5da3f11daed38c7ed8dad086bc0e6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\def5da3f11daed38c7ed8dad086bc0e6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+82            </intent-filter>
+83            <intent-filter>
+83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\def5da3f11daed38c7ed8dad086bc0e6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+84                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\def5da3f11daed38c7ed8dad086bc0e6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\鲂酾泷\.gradle\caches\transforms-3\def5da3f11daed38c7ed8dad086bc0e6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+85            </intent-filter>
+86        </receiver>
+87    </application>
+88
+89</manifest>

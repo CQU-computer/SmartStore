@@ -2923,8 +2923,14 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable card1
+drawable chatting_my_bgr
+drawable chatting_my_selecting
+drawable chatting_my_single_card
 drawable circle_image
 drawable circle_text
+drawable component21_4
+drawable component27_1
+drawable component27_2
 drawable dark_btn
 drawable date_index
 drawable design_fab_background
@@ -3035,6 +3041,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable p1_total_bgr
+drawable polygon1
 drawable progress_bgr
 drawable rcd_dark
 drawable rcd_light
@@ -3168,7 +3175,14 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id button1
+id button2
 id buttonPanel
+id button_follow
+id button_message
+id button_publish
+id c_black
+id c_circle_comment
 id cache_measures
 id callMeasure
 id camera_btn
@@ -3185,6 +3199,9 @@ id center_vertical
 id chain
 id chain2
 id chains
+id chatting_my_bgr
+id chatting_my_content
+id chatting_my_single_card
 id checkbox
 id checked
 id chronometer
@@ -3195,7 +3212,11 @@ id clip_vertical
 id clockwise
 id closest
 id collapseActionView
+id commend
+id commend_icon
+id comment_background
 id compress
+id concerns
 id confirm_button
 id constraint
 id contact_btn
@@ -3211,6 +3232,7 @@ id cradle
 id currentState
 id custom
 id customPanel
+id custom_image
 id cut
 id date_index
 id date_picker_actions
@@ -3265,6 +3287,8 @@ id exp_progress
 id expand_activities_button
 id expanded_menu
 id fade
+id fans
+id fans_num
 id fill
 id fill_horizontal
 id fill_vertical
@@ -3275,6 +3299,7 @@ id fitStart
 id fitToContents
 id fitXY
 id fixed
+id fixed_image
 id flip
 id floating
 id forever
@@ -3296,6 +3321,8 @@ id homeAsUp
 id honorRequest
 id horizontal_only
 id icon
+id icon1
+id icon2
 id icon_group
 id ifRoom
 id ignore
@@ -3324,8 +3351,11 @@ id line1
 id line3
 id linear
 id linear_layout
+id list1
 id listMode
 id list_item
+id list_view_a
+id list_view_b
 id m3_side_sheet
 id manage_btn
 id marquee
@@ -3387,6 +3417,8 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id my_chatting_circle
+id my_circle_icon
 id my_feedback_btn
 id my_hitory_btn
 id my_invite_btn
@@ -3407,6 +3439,7 @@ id next_room_title
 id noScroll
 id noState
 id none
+id none1
 id normal
 id north
 id notice_btn
@@ -3468,6 +3501,7 @@ id rcd_light
 id rcd_month
 id rectangles
 id recyclerView
+id report_drawn
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3582,6 +3616,7 @@ id staticPostLayout
 id stop
 id storedata
 id stretch
+id sub_interface_container
 id submenuarrow
 id submit_area
 id supportScrollUp
@@ -3618,6 +3653,7 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id thumbs
 id time
 id title
 id titleDividerNoCustom
@@ -3634,13 +3670,16 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tx
 id unchecked
 id uniform
 id unlabeled
 id up
 id useLogo
 id user_exp
+id user_name
 id user_rank
+id user_signature
 id vertical_only
 id view_offset_helper
 id view_transition
@@ -3772,7 +3811,10 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_chatting_circle
+layout activity_chattingcircle_recommend
 layout activity_main
+layout chatting_my_content
 layout custom_dialog
 layout date_item
 layout design_bottom_navigation_item
@@ -3791,6 +3833,8 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout discription_dialog
+layout fragment_sub_interface_a
+layout fragment_sub_interface_b
 layout in_out_rcd
 layout item_card_item
 layout item_list
@@ -3858,6 +3902,8 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout single_item
 layout support_simple_spinner_dropdown_item
+layout waterfall_fixed_item1
+layout waterfall_list_item
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
