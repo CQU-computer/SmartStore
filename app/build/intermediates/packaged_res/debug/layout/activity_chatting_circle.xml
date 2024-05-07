@@ -165,17 +165,15 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <EditText
+            <TextView
                 android:id="@+id/user_name"
                 android:layout_width="0dp"
                 android:layout_weight="5"
                 android:layout_height="wrap_content"
-                android:background="@null"
-                android:hint="昵称"
+                android:text="昵称"
                 android:gravity="center"
                 android:maxLength="6"
                 android:textColor="#bb000000"
-                android:textColorHint="#bb000000"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -194,19 +192,14 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
-        <EditText
+        <TextView
             android:layout_marginTop="5dp"
             android:id="@+id/user_signature"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@null"
-            android:clickable="true"
-            android:focusableInTouchMode="true"
             android:gravity="center_horizontal"
-            android:hint="好的自我介绍让别人认识你"
+            android:text="好的自我介绍让别人认识你"
             android:textColor="#cfcfcf"
-            android:textColorHint="#cfcfcf"
-            android:textCursorDrawable="@null"
             android:textSize="12sp"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout17" />
         <LinearLayout

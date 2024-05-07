@@ -28,6 +28,9 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextView StgNum;
 
   @NonNull
+  public final TextView audio;
+
+  @NonNull
   public final Button cameraBtn;
 
   @NonNull
@@ -35,9 +38,6 @@ public final class ActivityMainBinding implements ViewBinding {
 
   @NonNull
   public final TextView help1;
-
-  @NonNull
-  public final ImageView helpMain;
 
   @NonNull
   public final ImageView imageView13;
@@ -91,6 +91,9 @@ public final class ActivityMainBinding implements ViewBinding {
   public final Guideline part35;
 
   @NonNull
+  public final Guideline part37;
+
+  @NonNull
   public final Button recordBtn;
 
   @NonNull
@@ -102,22 +105,26 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final TextView textView11;
 
+  @NonNull
+  public final ImageView warning;
+
   private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull TextView StgNum,
-      @NonNull Button cameraBtn, @NonNull TextView familyNum, @NonNull TextView help1,
-      @NonNull ImageView helpMain, @NonNull ImageView imageView13, @NonNull ImageView imageView14,
+      @NonNull TextView audio, @NonNull Button cameraBtn, @NonNull TextView familyNum,
+      @NonNull TextView help1, @NonNull ImageView imageView13, @NonNull ImageView imageView14,
       @NonNull ImageView imageView15, @NonNull ImageView imageView18, @NonNull TextView itemNum,
       @NonNull LinearLayout linearLayout15, @NonNull LinearLayout linearLayout18,
       @NonNull LinearLayout linearLayout20, @NonNull Button manageBtn, @NonNull TextView oneTOfour,
       @NonNull TextView oneTOthree, @NonNull TextView oneTOtwo, @NonNull Guideline part31,
       @NonNull Guideline part32, @NonNull Guideline part33, @NonNull Guideline part34,
-      @NonNull Guideline part35, @NonNull Button recordBtn, @NonNull ScrollView scrollView3,
-      @NonNull Button searchBtn, @NonNull TextView textView11) {
+      @NonNull Guideline part35, @NonNull Guideline part37, @NonNull Button recordBtn,
+      @NonNull ScrollView scrollView3, @NonNull Button searchBtn, @NonNull TextView textView11,
+      @NonNull ImageView warning) {
     this.rootView = rootView;
     this.StgNum = StgNum;
+    this.audio = audio;
     this.cameraBtn = cameraBtn;
     this.familyNum = familyNum;
     this.help1 = help1;
-    this.helpMain = helpMain;
     this.imageView13 = imageView13;
     this.imageView14 = imageView14;
     this.imageView15 = imageView15;
@@ -135,10 +142,12 @@ public final class ActivityMainBinding implements ViewBinding {
     this.part33 = part33;
     this.part34 = part34;
     this.part35 = part35;
+    this.part37 = part37;
     this.recordBtn = recordBtn;
     this.scrollView3 = scrollView3;
     this.searchBtn = searchBtn;
     this.textView11 = textView11;
+    this.warning = warning;
   }
 
   @Override
@@ -174,6 +183,12 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.audio;
+      TextView audio = ViewBindings.findChildViewById(rootView, id);
+      if (audio == null) {
+        break missingId;
+      }
+
       id = R.id.camera_btn;
       Button cameraBtn = ViewBindings.findChildViewById(rootView, id);
       if (cameraBtn == null) {
@@ -189,12 +204,6 @@ public final class ActivityMainBinding implements ViewBinding {
       id = R.id.help1;
       TextView help1 = ViewBindings.findChildViewById(rootView, id);
       if (help1 == null) {
-        break missingId;
-      }
-
-      id = R.id.help_main;
-      ImageView helpMain = ViewBindings.findChildViewById(rootView, id);
-      if (helpMain == null) {
         break missingId;
       }
 
@@ -300,6 +309,12 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.part37;
+      Guideline part37 = ViewBindings.findChildViewById(rootView, id);
+      if (part37 == null) {
+        break missingId;
+      }
+
       id = R.id.record_btn;
       Button recordBtn = ViewBindings.findChildViewById(rootView, id);
       if (recordBtn == null) {
@@ -324,11 +339,17 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, StgNum, cameraBtn, familyNum,
-          help1, helpMain, imageView13, imageView14, imageView15, imageView18, itemNum,
+      id = R.id.warning;
+      ImageView warning = ViewBindings.findChildViewById(rootView, id);
+      if (warning == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((ConstraintLayout) rootView, StgNum, audio, cameraBtn,
+          familyNum, help1, imageView13, imageView14, imageView15, imageView18, itemNum,
           linearLayout15, linearLayout18, linearLayout20, manageBtn, oneTOfour, oneTOthree,
-          oneTOtwo, part31, part32, part33, part34, part35, recordBtn, scrollView3, searchBtn,
-          textView11);
+          oneTOtwo, part31, part32, part33, part34, part35, part37, recordBtn, scrollView3,
+          searchBtn, textView11, warning);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

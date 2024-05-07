@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.smartstore" android:versionName="1.0" android:versionCode="1">
   <uses-sdk android:targetSdkVersion="34" android:minSdkVersion="28"/>
   <uses-feature android:name="android.hardware.camera" android:required="false"/>
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
   <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
   <uses-permission android:name="android.permission.INTERNET"/>
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -14,9 +17,17 @@
   <uses-permission android:name="android.permission.GET_TASKS"/>
   <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
   <uses-permission android:name="android.permission.CAMERA"/>
+  <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+  <queries>
+    <intent>
+      <action android:name="android.speech.RecognitionService"/>
+    </intent>
+  </queries>
   <permission android:name="com.example.smartstore.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
   <uses-permission android:name="com.example.smartstore.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
-  <application android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:allowBackup="true" android:testOnly="true" android:roundIcon="@mipmap/ic_launcher_round" android:usesCleartextTraffic="true" android:extractNativeLibs="false" android:supportsRtl="true" android:debuggable="true" android:label="@string/app_name" android:name="com.mob.MobApplication" android:theme="@style/AppTheme" android:dataExtractionRules="@xml/data_extraction_rules" android:icon="@drawable/icon" android:fullBackupContent="@xml/backup_rules">
+  <application android:requestLegacyExternalStorage="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:allowBackup="true" android:testOnly="true" android:roundIcon="@mipmap/ic_launcher_round" android:usesCleartextTraffic="true" android:extractNativeLibs="false" android:supportsRtl="true" android:debuggable="true" android:label="齐物智慧家务" android:name="com.mob.MobApplication" android:theme="@style/AppTheme" android:dataExtractionRules="@xml/data_extraction_rules" android:icon="@drawable/icon" android:fullBackupContent="@xml/backup_rules">
+    <activity android:name="chattingCircle.OtherZhuye" android:exported="false"/>
+    <activity android:name="com.example.smartstore.help_activity" android:exported="false"/>
     <activity android:name="image_submit.Upload"/>
     <activity android:name="in_out_rcd.in_out_rcd"/>
     <activity android:name="com.example.smartstore.discription_dialog"/>
@@ -38,16 +49,12 @@
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity>
-    <service android:enabled="false" android:name="androidx.camera.core.impl.MetadataHolderService" android:exported="false">
-      <meta-data android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER" android:value="androidx.camera.camera2.Camera2Config$DefaultProvider"/>
-    </service>
+    <service android:enabled="false" android:name="androidx.camera.core.impl.MetadataHolderService" android:exported="false"/>
     <provider android:name="androidx.startup.InitializationProvider" android:exported="false" android:authorities="com.example.smartstore.androidx-startup">
       <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
       <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
       <meta-data android:name="androidx.profileinstaller.ProfileInstallerInitializer" android:value="androidx.startup"/>
     </provider>
-    <uses-library android:name="androidx.window.extensions" android:required="false"/>
-    <uses-library android:name="androidx.window.sidecar" android:required="false"/>
     <provider android:name="com.mob.MobProvider" android:exported="false" android:authorities="com.example.smartstore.com.mob.MobProvider" android:multiprocess="true"/>
     <activity android:name="com.mob.id.MobIDSYActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:exported="true">
       <intent-filter>

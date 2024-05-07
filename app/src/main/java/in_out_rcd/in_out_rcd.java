@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -57,7 +58,6 @@ public class in_out_rcd extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("config", Context.MODE_PRIVATE);
         Current_layout_id = String.valueOf(preferences.getInt("current_layout_id",-1));
 
-        System.out.println("aaaaaa" + Current_layout_id);
         flag = true;  //入库
 
         page = findViewById(R.id.page);
@@ -208,7 +208,6 @@ public class in_out_rcd extends AppCompatActivity {
                 ((TextView) rcd_item.findViewById(R.id.ttttt)).setText(ic.time);
 
                 for (int i = 0; i < 7; i++){
-                    System.out.println("??????" + ic.day);
                     if (getMONTH(Integer.parseInt(ic.month)).equals(month.get(i)) && ic.day.equals(day.get(i))) {
                         OUT.computeIfAbsent(i, k -> new ArrayList<>());
                         Objects.requireNonNull(OUT.get(i)).add(rcd_item);
@@ -245,7 +244,6 @@ public class in_out_rcd extends AppCompatActivity {
                     String stg_name = jsonObject.getString("stg_name");
                     String dateTimeString = jsonObject.getString("ruchu_time");
                     String uname = jsonObject.getString("uname");
-                    System.out.println("+++++++" + it_name);
                     DateTimeFormatter formatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME;
                     OffsetDateTime offsetDateTime = OffsetDateTime.parse(dateTimeString, formatter);
 
@@ -266,7 +264,7 @@ public class in_out_rcd extends AppCompatActivity {
             }
             response.body().close();
         } catch (IOException | JSONException e) {
-            throw new RuntimeException(e);
+            runOnUiThread(() -> Toast.makeText(getApplicationContext(), "网络未连接", Toast.LENGTH_SHORT).show());
         }
     }
 
@@ -318,7 +316,6 @@ public class in_out_rcd extends AppCompatActivity {
             }
             response.body().close();
         } catch (IOException | JSONException e) {
-            throw new RuntimeException(e);
         }
     }
 
@@ -342,7 +339,6 @@ public class in_out_rcd extends AppCompatActivity {
             }
             response.body().close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
         }
     }
 

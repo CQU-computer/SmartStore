@@ -11,7 +11,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView11"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -106,45 +106,6 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2" />
                 </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignBottom="@id/c_circle_comment"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        tools:ignore="NestedWeights" />
-
-                    <EditText
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="8.5"
-                        android:background="@android:color/transparent"
-                        android:hint="  "
-                        android:textColor="#000000"
-                        android:textColorHint="#000000"
-                        android:textSize="40sp"
-                        tools:ignore="SpeakableTextPresentCheck" />
-
-                    <Button
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1.5"
-                        android:background="@android:color/transparent"
-                        android:text=" "
-                        tools:ignore="SpeakableTextPresentCheck" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
-                </LinearLayout>
-
             </RelativeLayout>
 
             <TextView
@@ -157,6 +118,7 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <LinearLayout
+                android:layout_marginBottom="60dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/c_black"
@@ -209,6 +171,13 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/audio"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
 
         <TextView
             android:layout_width="0dp"

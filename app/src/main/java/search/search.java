@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.smartstore.R;
+import com.example.smartstore.help_activity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -56,6 +57,7 @@ public class search extends AppCompatActivity {
 
     public static ArrayList<String> res = new ArrayList<>();
     private Button goto_change_layout;
+    private Button hlp_search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +74,7 @@ public class search extends AppCompatActivity {
         editText = findViewById(R.id.search_txt);
         search_btn = findViewById(R.id.search_btn);
         goto_change_layout = findViewById(R.id.goto_change_layout);
+        hlp_search = findViewById(R.id.hlp_search);
 
         preference = getSharedPreferences("config",Context.MODE_PRIVATE);
         ((TextView)findViewById(R.id.layout_name)).setText(preference.getString("current_layout_name","还没有场景哦！"));
@@ -105,19 +108,23 @@ public class search extends AppCompatActivity {
             updateUI();
         }
 
-
         search_btn.setOnClickListener(v -> {
             res.clear();
             String content = editText.getText().toString();
+            editText.clearFocus();
+            editText.setText("");
             if(content.equals("")){
                 Toast.makeText(this, "输入内容不能为空", Toast.LENGTH_SHORT).show();
             }
-            Integer cnt = 1;
+            boolean exist = false;
             for(Integer key: item_list.keySet()){
                 if(Objects.requireNonNull(item_list.get(key)).it_name.contains(content)){
-                    res.add(cnt + ": " + Current_layout + " -> " + user_room.get(Objects.requireNonNull(item_list.get(key)).rom_id) + " -> " + user_stgs.get(Objects.requireNonNull(item_list.get(key)).stg_id) +":" + item_list.get(key).it_name);
-                    cnt++;
+                    exist = true;
+                    res.add(" ▲ " + Current_layout + " - " + user_room.get(Objects.requireNonNull(item_list.get(key)).rom_id) + " - " + user_stgs.get(Objects.requireNonNull(item_list.get(key)).stg_id) +":" + item_list.get(key).it_name);
                 }
+            }
+            if(!exist){
+                res.add("没有找到" + content + "哦~");
             }
             search_dialog dd = new search_dialog( this,content);
             dd.onCreate_Attention_Dialog();
@@ -128,8 +135,8 @@ public class search extends AppCompatActivity {
             room_stg_item.clear();
             item_list.clear();
             finish();
+            overridePendingTransition(0,0);
         });
-
         goto_change_layout.setOnClickListener(v -> {
             attention_dialog dd = new attention_dialog("你确定要切换当前场景吗","场景切换" ,"确认切换", "不，我点错了",this, isAccept -> {
                 if(isAccept){
@@ -147,6 +154,22 @@ public class search extends AppCompatActivity {
             });
             dd.onCreate_Attention_Dialog();
         });
+        hlp_search.setOnClickListener(v -> {
+            Intent it = new Intent(this, help_activity.class);
+            it.putExtra("where","search");
+            startActivity(it);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        });
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String source = extras.getString("source");
+            if (source != null) {
+                String[] parts = source.split("/");
+                editText.setText(parts[1]);
+                search_btn.performClick();
+            }
+        }
     }
 
 
@@ -178,6 +201,7 @@ public class search extends AppCompatActivity {
         room_stg_item.clear();
         item_list.clear();
         finish();
+        overridePendingTransition(0,0);
     }
     public void layout_get_room() {  //在每次场景切换执行,拉取当前场景所有room
         OkHttpClient client = new OkHttpClient().newBuilder().build();

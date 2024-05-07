@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -86,10 +85,10 @@ public final class ActivityChattingCircleBinding implements ViewBinding {
   public final Circle userImg1;
 
   @NonNull
-  public final EditText userName;
+  public final TextView userName;
 
   @NonNull
-  public final EditText userSignature;
+  public final TextView userSignature;
 
   private ActivityChattingCircleBinding(@NonNull ScrollView rootView, @NonNull Button button1,
       @NonNull Button button2, @NonNull ImageView chattingMyBgr, @NonNull Button commend,
@@ -99,8 +98,8 @@ public final class ActivityChattingCircleBinding implements ViewBinding {
       @NonNull LinearLayout linearLayout17, @NonNull Button myChattingCircle,
       @NonNull ImageView myCircleIcon, @NonNull ScrollView myCircleRoot,
       @NonNull LinearLayout none1, @NonNull FrameLayout subInterfaceContainer,
-      @NonNull TextView thumbs, @NonNull Circle userImg1, @NonNull EditText userName,
-      @NonNull EditText userSignature) {
+      @NonNull TextView thumbs, @NonNull Circle userImg1, @NonNull TextView userName,
+      @NonNull TextView userSignature) {
     this.rootView = rootView;
     this.button1 = button1;
     this.button2 = button2;
@@ -270,13 +269,13 @@ public final class ActivityChattingCircleBinding implements ViewBinding {
       }
 
       id = R.id.user_name;
-      EditText userName = ViewBindings.findChildViewById(rootView, id);
+      TextView userName = ViewBindings.findChildViewById(rootView, id);
       if (userName == null) {
         break missingId;
       }
 
       id = R.id.user_signature;
-      EditText userSignature = ViewBindings.findChildViewById(rootView, id);
+      TextView userSignature = ViewBindings.findChildViewById(rootView, id);
       if (userSignature == null) {
         break missingId;
       }

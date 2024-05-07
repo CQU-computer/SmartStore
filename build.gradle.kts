@@ -8,7 +8,7 @@ buildscript {
         // 增加MobSDK插件配置
         classpath("com.mob.sdk:MobSDK2:+")
         // 增加google services插件配置，用于集成FCM，不集成FCM可不配置
-        classpath("com.google.gms:google-services:4.3.14")
+//        classpath("com.google.gms:google-services:4.3.14")
     }
 }
 

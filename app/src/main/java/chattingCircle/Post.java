@@ -14,6 +14,8 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.text.Editable;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.WindowManager;
@@ -165,6 +167,30 @@ public class Post extends AppCompatActivity {
                 });
             }
         });
+        InputFilter filter = new InputFilter() {
+            @Override
+            public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+                StringBuilder filtered = new StringBuilder();
+                for (int i = start; i < end; i++) {
+                    char character = source.charAt(i);
+                    if (Character.isLetterOrDigit(character) || Character.isSpaceChar(character) ||
+                            ".,?!@\"':;…+-*/=~()，。？！、～…：；.@（）“”'".indexOf(character) != -1 ||
+                            Character.UnicodeBlock.of(character) == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS ||
+                            Character.UnicodeBlock.of(character) == Character.UnicodeBlock.CJK_COMPATIBILITY_IDEOGRAPHS ||
+                            Character.UnicodeBlock.of(character) == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A ||
+                            Character.UnicodeBlock.of(character) == Character.UnicodeBlock.CJK_SYMBOLS_AND_PUNCTUATION) {
+                        filtered.append(character);
+                    }
+                    else {
+                        continue;
+                    }
+                }
+
+                return filtered.toString();
+            }
+        };
+        postName.setFilters(new InputFilter[]{filter, new InputFilter.LengthFilter(30)});
+        postText.setFilters(new InputFilter[]{filter, new InputFilter.LengthFilter(10000)});
         media.setOnClickListener(v -> xzImage());
         save.setOnClickListener(v -> {
             if(servertext[0]!=null&servername[0]!=null){
@@ -178,7 +204,6 @@ public class Post extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                Toast.makeText(this, "发布成功", Toast.LENGTH_SHORT).show();
             }
             else{
                 Toast.makeText(this, "请输入标题和内容！", Toast.LENGTH_SHORT).show();
@@ -266,7 +291,7 @@ public class Post extends AppCompatActivity {
                             .build();
                     Response response = client1.newCall(request).execute();
                     if (response.isSuccessful()) {
-                        System.out.println("yoyo");
+                        runOnUiThread(() -> Toast.makeText(getApplicationContext(), "发布成功", Toast.LENGTH_SHORT).show());
                     } else {
                         System.out.println("响应码: " + response.code());
                         String responseBody = response.body().string();
@@ -274,7 +299,7 @@ public class Post extends AppCompatActivity {
                     }
                     response.body().close();
                 } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    runOnUiThread(() -> Toast.makeText(getApplicationContext(), "网络未连接", Toast.LENGTH_SHORT).show());
                 }
             }).start();
         } catch (Exception e) {

@@ -54,12 +54,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.90" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/l6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.60" />
+        app:layout_constraintGuide_percent="0.7" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/l7"
         android:layout_width="match_parent"

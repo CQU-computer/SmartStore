@@ -8,7 +8,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView12"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
@@ -74,7 +75,7 @@
                             android:id="@+id/user_img"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
-                            android:src="@drawable/x" />
+                            android:src="@drawable/yoyo" />
                     </RelativeLayout>
 
                     <LinearLayout
@@ -91,7 +92,7 @@
                             android:background="@null"
                             android:clickable="true"
                             android:focusableInTouchMode="true"
-                            android:hint="默认昵称"
+                            android:hint=""
                             android:maxLength="6"
                             android:textColor="#444643"
                             android:textColorHint="#444643"
@@ -116,7 +117,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
-                                android:text="123456789"
+                                android:text=""
                                 android:textColor="#959F99"
                                 android:textSize="12sp" />
                         </LinearLayout>
@@ -180,7 +181,7 @@
                         android:background="@null"
                         android:clickable="true"
                         android:focusableInTouchMode="true"
-                        android:hint="好的自我介绍让别人认识你"
+                        android:hint=""
                         android:textColor="#757C77"
                         android:textColorHint="#757C77"
                         android:textSize="13sp" />
@@ -283,7 +284,7 @@
                                     android:id="@+id/HonorLevelText"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text=" 收纳新手"
+                                    android:text=" "
                                     android:textColor="#32D6BF"
                                     android:textSize="15sp"
                                     android:textStyle="bold" />
@@ -293,8 +294,8 @@
                                 android:id="@+id/HonorNextLevel"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="31dp"
-                                android:text="下一级：收纳玩家"
+                                android:layout_marginLeft="22dp"
+                                android:text=""
                                 android:textColor="#757C77"
                                 android:textSize="11sp" />
 
@@ -316,7 +317,7 @@
                                     android:id="@+id/user_exp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="40"
+                                    android:text=""
                                     android:textColor="#24C6AF"
                                     android:textSize="14sp"
                                     android:textStyle="bold" />
@@ -325,7 +326,7 @@
                                     android:id="@+id/max_exp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text=" / 100"
+                                    android:text=" / "
                                     android:textColor="#324946"
                                     android:textSize="14dp"
                                     android:textStyle="bold" />
@@ -350,7 +351,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center_horizontal|center_vertical"
-                                android:text="99"
+                                android:text=""
                                 android:textColor="#009581"
                                 android:textSize="27dp"
                                 android:textStyle="bold" />
@@ -376,15 +377,25 @@
                     android:src="@drawable/my_like" />
 
                 <ImageView
-                    android:id="@+id/my_feedback_btn"
+                    android:id="@+id/my_peo_btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/my_like_btn"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/my_peo_manage" />
+
+
+                <ImageView
+                    android:id="@+id/my_feedback_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/my_peo_btn"
                     android:layout_marginTop="5dp"
                     android:adjustViewBounds="true"
                     android:src="@drawable/my_feedback" />
 
                 <ImageView
+                    android:layout_marginTop="-5dp"
                     android:id="@+id/my_record_btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -392,14 +403,6 @@
                     android:adjustViewBounds="true"
                     android:src="@drawable/my_record" />
 
-                <TextView
-                    android:id="@+id/my_feedback_btn1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/my_like_btn"
-                    android:layout_marginTop="5dp"
-                    android:text=" "
-                    android:textSize="32sp" />
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>
@@ -430,6 +433,12 @@
 
         <TextView
             android:id="@+id/fourTOtwo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/audio"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1" />

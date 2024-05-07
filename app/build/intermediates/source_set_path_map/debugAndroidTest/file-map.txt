@@ -1,6 +1,4 @@
-com.example.smartstore.test.app-jetified-core-1.5.0-0 C:\Users\zzw15\.gradle\caches\transforms-3\78f0047df228a69709c41759dd695ae9\transformed\jetified-core-1.5.0\res
-com.example.smartstore.test.app-jetified-annotation-experimental-1.4.0-1 C:\Users\zzw15\.gradle\caches\transforms-3\d7312942e9a8300c6bb39ebeee3e7504\transformed\jetified-annotation-experimental-1.4.0\res
-com.example.smartstore.test.app-androidTest-2 D:\SmartStore\app\build\generated\res\resValues\androidTest\debug
-com.example.smartstore.test.app-mergeDebugAndroidTestResources-3 D:\SmartStore\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-com.example.smartstore.test.app-mergeDebugAndroidTestResources-4 D:\SmartStore\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-com.example.smartstore.test.app-merged_res-5 D:\SmartStore\app\build\intermediates\merged_res\debugAndroidTest
+com.example.smartstore.test.app-androidTest-0 D:\SmartStore\app\build\generated\res\resValues\androidTest\debug
+com.example.smartstore.test.app-mergeDebugAndroidTestResources-1 D:\SmartStore\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.smartstore.test.app-mergeDebugAndroidTestResources-2 D:\SmartStore\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.smartstore.test.app-merged_res-3 D:\SmartStore\app\build\intermediates\merged_res\debugAndroidTest

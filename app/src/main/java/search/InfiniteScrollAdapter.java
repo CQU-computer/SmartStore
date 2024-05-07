@@ -141,6 +141,7 @@ public class InfiniteScrollAdapter extends RecyclerView.Adapter<InfiniteScrollAd
                 single_items.setOnLongClickListener(v -> {
                     attention_dialog dd = new attention_dialog("你确定要将"+item_list.get(key_it).it_name+"出库吗?","物品出库" ,"确认出库", "我点错了",context, isAccept -> {
                         if(isAccept){
+                            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                             single_items.getParent().requestDisallowInterceptTouchEvent(false);
                             Thread t1 = new Thread(() -> {
                                 OkHttpClient client = new OkHttpClient().newBuilder().build();
@@ -148,13 +149,13 @@ public class InfiniteScrollAdapter extends RecyclerView.Adapter<InfiniteScrollAd
 
                                 RequestBody body = RequestBody.create(JSON, "");
                                 String url = "http://120.26.248.74:8080/ChuItem?uid=" + search.uid.toString() + "&it_id=" + key_it;
-
+                                System.out.println(key_it);
                                 try {
                                     Request request = new Request.Builder()
                                             .url(url)
                                             .post(body)
                                             .build();
-
+                                    System.out.println();
                                     Response response = client.newCall(request).execute();
                                     if (!response.isSuccessful())
                                         System.out.println("响应码: " + response.code());

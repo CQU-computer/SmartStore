@@ -102,10 +102,11 @@
                         android:background="#00000000" />
 
                     <Button
+                        android:id="@+id/hlp_search"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="20dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="20dp"
                         android:layout_weight="20"
                         android:background="#00000000" />
 

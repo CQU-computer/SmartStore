@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.smartstore.app-mergeDebugResources-48:/values-v18/values-v18.xml",
+            "outputFile": "com.example.smartstore.app-mergeDebugResources-41:/values-v18/values-v18.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\zzw15\\.gradle\\caches\\transforms-3\\aeaada0f1fc055d8c5893522422ae27a\\transformed\\appcompat-1.6.1\\res\\values-v18\\values-v18.xml",
+                    "source": "C:\\Users\\zzw15\\.gradle\\caches\\transforms-3\\d49af0ce578b801491fdb01113d5569c\\transformed\\appcompat-1.6.1\\res\\values-v18\\values-v18.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -486,15 +486,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onFailure(Call call, IOException e) {
                 e.printStackTrace();
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(LoginActivity.this, "登录失败: 网络问题", Toast.LENGTH_SHORT).show();
-                        star.setX((float) findViewById(R.id.part_27).getWidth() / 7);
-                        isJudgePass = false;
-                        star.setImageResource(R.drawable.star_gray);
-                        star.setEnabled(true);
-                    }
+                runOnUiThread(() -> {
+                    Toast.makeText(LoginActivity.this, "登录失败: 网络问题", Toast.LENGTH_SHORT).show();
+                    star.setX((float) findViewById(R.id.part_27).getWidth() / 7);
+                    isJudgePass = false;
+                    star.setImageResource(R.drawable.star_gray);
+                    star.setEnabled(true);
                 });
             }
 
@@ -502,23 +499,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void onResponse(Call call, Response response) throws IOException {
                 String responseBody = response.body().string();
                 if (!response.isSuccessful()) {
-                    LoginActivity.this.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            if(responseBody.equals("failure")){
-                                Toast.makeText(LoginActivity.this, "登录失败: 用户名或密码错误", Toast.LENGTH_SHORT).show();
-                                star.setX((float) findViewById(R.id.part_27).getWidth() / 7);
-                                isJudgePass = false;
-                                star.setImageResource(R.drawable.star_gray);
-                                star.setEnabled(true);
-                            }
-                            else{
-                                star.setX((float) findViewById(R.id.part_27).getWidth() / 7);
-                                isJudgePass = false;
-                                star.setImageResource(R.drawable.star_gray);
-                                star.setEnabled(true);
-                                Toast.makeText(LoginActivity.this, "用户不存在，请注册新用户", Toast.LENGTH_SHORT).show();
-                            }
+                    LoginActivity.this.runOnUiThread(() -> {
+                        if(responseBody.equals("failure")){
+                            Toast.makeText(LoginActivity.this, "登录失败: 用户名或密码错误", Toast.LENGTH_SHORT).show();
+                            star.setX((float) findViewById(R.id.part_27).getWidth() / 7);
+                            isJudgePass = false;
+                            star.setImageResource(R.drawable.star_gray);
+                            star.setEnabled(true);
+                        }
+                        else{
+                            star.setX((float) findViewById(R.id.part_27).getWidth() / 7);
+                            isJudgePass = false;
+                            star.setImageResource(R.drawable.star_gray);
+                            star.setEnabled(true);
+                            Toast.makeText(LoginActivity.this, "用户不存在，请注册新用户", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
@@ -530,7 +524,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             t.join();
                             SharedPreferences.Editor editor = preferences.edit();
                             editor.putInt("uer_id", uid);
+                            editor.putInt("current_layout_id",-1);
                             editor.apply();
+
                             Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
                             refresh_login_time(currentTimeMillis);  //更新登录时间
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);

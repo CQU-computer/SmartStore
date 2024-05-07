@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -37,6 +38,7 @@ public class Postings extends AppCompatActivity {
     TextView postinglikes;
     TextView postingBack;
     Activity activity;
+    String serverResponse;
 
     ImageView Likes;
 
@@ -100,18 +102,27 @@ public class Postings extends AppCompatActivity {
             postingdetail.setText(post_content);
             postingimg.setImageBitmap(BitmapFactory.decodeFile(post_img));
             postingtime.setText(post_time);
+            id=Integer.parseInt(pid);
+            checkAndSetLikeStatus(id, serverId);
 
             Likes.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-                    String likes=postinglikes.getText().toString();
-                    int afterlike = Integer.parseInt(likes)+1;
-                    String after_like=afterlike+"";
-                    postinglikes.setText(after_like);
-                    Likes.setImageResource(R.drawable.star_green);
-                    id=Integer.parseInt(pid);
-                    updateLike(id,serverId);
+                    whetherLiked(id, serverId, new LikeCallback() {
+                        @Override
+                        public void onLikeResult(int responseCode) {
+                            if (responseCode == 1) {
+                                Toast.makeText(Postings.this, "已经点过赞了", Toast.LENGTH_SHORT).show();
+                            } else {
+                                String likes=postinglikes.getText().toString();
+                                int afterlike = Integer.parseInt(likes)+1;
+                                String after_like=afterlike+"";
+                                postinglikes.setText(after_like);
+                                Likes.setImageResource(R.drawable.star_green);
+                                updateLike(id,serverId);
+                            }
+                        }
+                    });
                 }
             });
         }
@@ -148,7 +159,6 @@ public class Postings extends AppCompatActivity {
                                 String detail=jsonObject.getString("post_detail");
                                 String time=jsonObject.getString("post_rls_time");
                                 int l=jsonObject.getInt("post_likes");
-                                System.out.println("我的点赞"+l);
 
                                 activity.runOnUiThread(() -> {
                                     postingname.setText(name);
@@ -169,7 +179,7 @@ public class Postings extends AppCompatActivity {
                         }
                         response.body().close();
                     } catch (IOException e) {
-                        throw new RuntimeException(e);
+                        runOnUiThread(() -> Toast.makeText(getApplicationContext(), "网络未连接", Toast.LENGTH_SHORT).show());
                     } catch (JSONException e) {
                         throw new RuntimeException(e);
                     }
@@ -189,7 +199,6 @@ public class Postings extends AppCompatActivity {
         queryParams1.append("post_id=").append(id).append("&");
         queryParams1.append("uid=").append(uid);
 
-        System.out.println("yoyoy" + queryParams1);
         RequestBody body1 = RequestBody.create(JSON1, "");
         String url1 = "http://120.26.248.74:8080/insertLikePost?" + queryParams1;
         try {
@@ -202,7 +211,6 @@ public class Postings extends AppCompatActivity {
 
                     Response response = client1.newCall(request).execute();
                     if (response.isSuccessful()) {
-                        System.out.println("yoyoyoyoyyoyoy");
                     } else {
                         System.out.println("响应码: " + response.code());
                         String responseBody = response.body().string();
@@ -210,12 +218,78 @@ public class Postings extends AppCompatActivity {
                     }
                     response.body().close();
                 } catch (IOException e) {
-                    throw new RuntimeException(e);
                 }
             }).start();
 
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+    public interface LikeCallback {
+        void onLikeResult(int responseCode);
+    }
+    public void whetherLiked(int pId,int id,final LikeCallback callback){
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+        StringBuilder queryParams = new StringBuilder();
+        queryParams.append("post_id=").append(pId).append("&");
+        queryParams.append("uid=").append(id);
+
+        RequestBody body = RequestBody.create(JSON, "");
+        String url = "http://120.26.248.74:8080/whetherLikeOrNot?" + queryParams;
+        try {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Request request = new Request.Builder()
+                                .url(url)
+                                .post(body)
+                                .build();
+                        Response response = client.newCall(request).execute();
+                        if (response.isSuccessful()) {
+                            final String serverResponse = response.body().string();
+                            activity.runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callback.onLikeResult(Integer.parseInt(serverResponse));
+                                }
+                            });
+                        } else {
+                            System.out.println("响应码: " + response.code());
+                            String responseBody = response.body().string();
+                            System.out.println("响应体: " + responseBody);
+                        }
+                        response.body().close();
+                    } catch (IOException e) {
+                    }
+                }
+            }).start();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+    private void checkAndSetLikeStatus(int postId, int userId) {
+        whetherLiked(postId, userId, new LikeCallback() {
+            @Override
+            public void onLikeResult(int responseCode) {
+                if (responseCode == 1) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Likes.setImageResource(R.drawable.star_green);
+                            postinglikes.setText(post_like);
+                        }
+                    });
+                } else {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Likes.setImageResource(R.drawable.star_gray);
+                        }
+                    });
+                }
+            }
+        });
     }
 }

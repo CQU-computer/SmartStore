@@ -10,19 +10,13 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -62,8 +56,8 @@ public class ChattingCircle extends AppCompatActivity {
     private Activity activity;
     ImageView icon1;
     ImageView icon2;
-    EditText user_sg;
-    EditText user_name;
+    TextView user_sg;
+    TextView user_name;
     TextView thumbs;
     TextView work;
     ImageView commend_icon;
@@ -78,10 +72,6 @@ public class ChattingCircle extends AppCompatActivity {
         setContentView(R.layout.activity_chatting_circle);
         activity = (Activity)this;
         context=(Context)this;
-
-        View decorView = getWindow().getDecorView();
-        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
-        decorView.setSystemUiVisibility(uiOptions);
 
         preferences = getSharedPreferences("config", Context.MODE_PRIVATE);
         editor = preferences.edit();
@@ -109,71 +99,6 @@ public class ChattingCircle extends AppCompatActivity {
         getworks(serverId);
         like=0;
         getlikesnum(serverId);
-        user_sg.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
-                }
-            }
-        });
-        user_sg.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
-            @SuppressLint("ResourceType")
-            @Override
-            public void afterTextChanged(Editable s) {
-                String userSg = s.toString();
-                editor.putString("usersg", userSg);
-                editor.apply();
-                int updateId = serverId;
-                String updatesg = preferences.getString("usersg", null);
-                updateInfosg(updateId,updatesg);
-            }
-        });
-        user_name.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
-                }
-            }
-        });
-        user_name.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
-            @SuppressLint("ResourceType")
-            @Override
-            public void afterTextChanged(Editable s) {
-                String userName = s.toString();
-                editor.putString("username", userName);
-                editor.apply();
-                int updateId = serverId;
-                String updatename = preferences.getString("username", null);
-                updateInfoname(updateId,updatename);
-            }
-        });
-
-        ViewGroup rootView = (ViewGroup) findViewById(R.id.myCircle_root);
-        if (rootView != null) {
-            rootView.setOnTouchListener((v, event) -> {
-                if (event.getAction() == MotionEvent.ACTION_UP) {
-                    if (!(v instanceof EditText)) {
-                        user_name.clearFocus();
-                        user_sg.clearFocus();
-                        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                        if (imm != null) {
-                            imm.hideSoftInputFromWindow(rootView.getWindowToken(), 0);
-                        }
-                    }
-                }
-                return false;
-            });
-        }
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -313,7 +238,7 @@ public class ChattingCircle extends AppCompatActivity {
                         }
                         response.body().close();
                     } catch (IOException e) {
-                        throw new RuntimeException(e);
+                        runOnUiThread(() -> Toast.makeText(getApplicationContext(), "网络未连接", Toast.LENGTH_SHORT).show());
                     } catch (JSONException e) {
                         throw new RuntimeException(e);
                     }
@@ -365,7 +290,6 @@ public class ChattingCircle extends AppCompatActivity {
                                 likes[k]=plikes;
                                 int pId=jsonObject.getInt("post_id");
                                 post_ids[k]=pId;
-                                System.out.println("我帖子呢" + jsonObject);
                             }
                             activity.runOnUiThread(() -> {
                                 for (int k = 0; k < jsonArray.length(); k++) {
@@ -407,7 +331,6 @@ public class ChattingCircle extends AppCompatActivity {
                         }
                         response.body().close();
                     } catch (IOException e) {
-                        throw new RuntimeException(e);
                     } catch (JSONException e) {
                         throw new RuntimeException(e);
                     }
@@ -436,7 +359,11 @@ public class ChattingCircle extends AppCompatActivity {
                                 .build();
                         Response response = client.newCall(request).execute();
                         if (response.isSuccessful()) {
-                            System.out.println("0");
+                            activity.runOnUiThread(() -> {
+                                like=0;
+                                getlikesnum(serverId);
+                                getworks(serverId);
+                            });
                         } else {
                             System.out.println("响应码: " + response.code());
                             String responseBody = response.body().string();
@@ -444,7 +371,6 @@ public class ChattingCircle extends AppCompatActivity {
                         }
                         response.body().close();
                     } catch (IOException e) {
-                        throw new RuntimeException(e);
                     }
                 }
             }).start();
@@ -484,7 +410,6 @@ public class ChattingCircle extends AppCompatActivity {
                         }
                         response.body().close();
                     } catch (IOException e) {
-                        throw new RuntimeException(e);
                     } catch (JSONException e) {
                         throw new RuntimeException(e);
                     }
@@ -530,7 +455,6 @@ public class ChattingCircle extends AppCompatActivity {
                         }
                         response.body().close();
                     } catch (IOException e) {
-                        throw new RuntimeException(e);
                     } catch (JSONException e) {
                         throw new RuntimeException(e);
                     }
@@ -581,7 +505,6 @@ public class ChattingCircle extends AppCompatActivity {
                                 likes[k]=plikes;
                                 int pId=jsonObject.getInt("post_id");
                                 post_ids[k]=pId;
-                                System.out.println("我帖子呢" + jsonObject);
                             }
                             activity.runOnUiThread(() -> {
                                 for (int k = 0; k < jsonArray.length(); k++) {
@@ -594,7 +517,6 @@ public class ChattingCircle extends AppCompatActivity {
                                     ((TextView) single_items.findViewById(R.id.postname)).setText(names[finalK]);
                                     ((TextView) single_items.findViewById(R.id.postrlstime)).setText(times[finalK]);
                                     ((TextView) single_items.findViewById(R.id.postlikes)).setText(""+likes[finalK]);
-                                    System.out.println("-------+"+medias[finalK]);
                                     ((ImageView) single_items.findViewById(R.id.postmedia)).setImageBitmap(medias[finalK]);
 
                                     single_items.setOnClickListener(v -> {
@@ -605,6 +527,16 @@ public class ChattingCircle extends AppCompatActivity {
                                         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                                     });
                                     sub_interface_container.addView(single_items);
+                                    single_items.setOnLongClickListener(v -> {
+                                        attention_dialog dd = new attention_dialog("你确认要删除吗？","删除喜欢的作品" ,"确认删除", "我点错了",context, isAccept -> {
+                                            if(isAccept){
+                                                single_items.setVisibility(View.GONE);
+                                                deleteLiked(post_ids[finalK],serverId);
+                                            }
+                                        });
+                                        dd.onCreate_Attention_Dialog();
+                                        return true;
+                                    });
                                 }
                             });
                         } else {
@@ -614,7 +546,6 @@ public class ChattingCircle extends AppCompatActivity {
                         }
                         response.body().close();
                     } catch (IOException e) {
-                        throw new RuntimeException(e);
                     } catch (JSONException e) {
                         throw new RuntimeException(e);
                     }
@@ -624,65 +555,34 @@ public class ChattingCircle extends AppCompatActivity {
             throw new RuntimeException(e);
         }
     }
+    public void deleteLiked(int pId,int id){
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+        StringBuilder queryParams = new StringBuilder();
+        queryParams.append("post_id=").append(pId).append("&");
+        queryParams.append("uid=").append(id);
 
-    public void updateInfoname(Integer uid, String uname) {
-        OkHttpClient client1 = new OkHttpClient().newBuilder().build();
-        MediaType JSON1 = MediaType.parse("application/json; charset=utf-8");
-        StringBuilder queryParams1 = new StringBuilder();
-        queryParams1.append("uid=").append(uid).append("&");
-        queryParams1.append("uname=").append(uname);
-        RequestBody body1 = RequestBody.create(JSON1, "");
-        String url1 = "http://120.26.248.74:8080/updateUserInfo?" + queryParams1;
+        RequestBody body = RequestBody.create(JSON, "");
+        String url = "http://120.26.248.74:8080/deleteLikedPost?" + queryParams;
         try {
-            new Thread(() -> {
-                try {
-                    Request request = new Request.Builder()
-                            .url(url1)
-                            .post(body1)
-                            .build();
-                    Response response = client1.newCall(request).execute();
-                    if (response.isSuccessful()) {
-                        System.out.println("yoyoyoyoyyoyoy");
-                    } else {
-                        System.out.println("响应码: " + response.code());
-                        String responseBody = response.body().string();
-                        System.out.println("响应体: " + responseBody);
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Request request = new Request.Builder()
+                                .url(url)
+                                .post(body)
+                                .build();
+                        Response response = client.newCall(request).execute();
+                        if (response.isSuccessful()) {
+                        } else {
+                            System.out.println("响应码: " + response.code());
+                            String responseBody = response.body().string();
+                            System.out.println("响应体: " + responseBody);
+                        }
+                        response.body().close();
+                    } catch (IOException e) {
                     }
-                    response.body().close();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }).start();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-    public void updateInfosg(Integer uid, String u_sg) {
-        OkHttpClient client1 = new OkHttpClient().newBuilder().build();
-        MediaType JSON1 = MediaType.parse("application/json; charset=utf-8");
-        StringBuilder queryParams1 = new StringBuilder();
-        queryParams1.append("uid=").append(uid).append("&");
-        queryParams1.append("u_signature=").append(u_sg);
-        RequestBody body1 = RequestBody.create(JSON1, "");
-        String url1 = "http://120.26.248.74:8080/updateUserInfo?" + queryParams1;
-        try {
-            new Thread(() -> {
-                try {
-                    Request request = new Request.Builder()
-                            .url(url1)
-                            .post(body1)
-                            .build();
-                    Response response = client1.newCall(request).execute();
-                    if (response.isSuccessful()) {
-                        System.out.println("yoyoyoyoyyoyoy");
-                    } else {
-                        System.out.println("响应码: " + response.code());
-                        String responseBody = response.body().string();
-                        System.out.println("响应体: " + responseBody);
-                    }
-                    response.body().close();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
                 }
             }).start();
         } catch (Exception e) {

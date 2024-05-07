@@ -29,6 +29,9 @@ public final class SearchBinding implements ViewBinding {
   public final Button gotoChangeLayout;
 
   @NonNull
+  public final Button hlpSearch;
+
+  @NonNull
   public final TextView layoutName;
 
   @NonNull
@@ -62,13 +65,14 @@ public final class SearchBinding implements ViewBinding {
   public final EditText searchTxt;
 
   private SearchBinding(@NonNull ConstraintLayout rootView, @NonNull Button gotoChangeLayout,
-      @NonNull TextView layoutName, @NonNull LinearLayout part19,
+      @NonNull Button hlpSearch, @NonNull TextView layoutName, @NonNull LinearLayout part19,
       @NonNull ConstraintLayout partTest, @NonNull RecyclerView recyclerView,
       @NonNull ScrollView scrollView2, @NonNull ImageView searchBar, @NonNull Button searchBtn,
       @NonNull Button searchReturnBtn, @NonNull TextView searchTips, @NonNull ImageView searchTitle,
       @NonNull EditText searchTxt) {
     this.rootView = rootView;
     this.gotoChangeLayout = gotoChangeLayout;
+    this.hlpSearch = hlpSearch;
     this.layoutName = layoutName;
     this.part19 = part19;
     this.partTest = partTest;
@@ -112,6 +116,12 @@ public final class SearchBinding implements ViewBinding {
       id = R.id.goto_change_layout;
       Button gotoChangeLayout = ViewBindings.findChildViewById(rootView, id);
       if (gotoChangeLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.hlp_search;
+      Button hlpSearch = ViewBindings.findChildViewById(rootView, id);
+      if (hlpSearch == null) {
         break missingId;
       }
 
@@ -177,9 +187,9 @@ public final class SearchBinding implements ViewBinding {
         break missingId;
       }
 
-      return new SearchBinding((ConstraintLayout) rootView, gotoChangeLayout, layoutName, part19,
-          partTest, recyclerView, scrollView2, searchBar, searchBtn, searchReturnBtn, searchTips,
-          searchTitle, searchTxt);
+      return new SearchBinding((ConstraintLayout) rootView, gotoChangeLayout, hlpSearch, layoutName,
+          part19, partTest, recyclerView, scrollView2, searchBar, searchBtn, searchReturnBtn,
+          searchTips, searchTitle, searchTxt);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

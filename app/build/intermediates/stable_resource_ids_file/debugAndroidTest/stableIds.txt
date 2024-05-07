@@ -1,2 +1,0 @@
-com.example.smartstore.test:style/WhiteBackgroundTheme = 0x7f010001
-com.example.smartstore.test:style/WhiteBackgroundDialogTheme = 0x7f010000

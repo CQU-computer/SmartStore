@@ -9,14 +9,15 @@
     android:focusableInTouchMode="true">
 
     <ScrollView
+        android:layout_marginBottom="40dp"
         android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout15"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:scrollbars="none">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -30,23 +31,33 @@
                 app:layout_constraintGuide_percent="0.5" />
 
             <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/part37"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="1.0" />
+
+            <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/part32"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.72" />
+
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/part33"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.82" />
+
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/part34"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.11" />
+
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/part35"
                 android:layout_width="match_parent"
@@ -67,6 +78,7 @@
                 app:layout_constraintTop_toBottomOf="@id/part35"
                 app:layout_constraintVertical_bias="0.112" />
 
+
             <ImageView
                 android:id="@+id/imageView14"
                 android:layout_width="match_parent"
@@ -83,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="130dp"
-                android:text="温暖的家"
+                android:text="还没有场景哦"
                 android:textColor="#ffffff"
                 android:textSize="25sp"
                 android:typeface="serif"
@@ -131,7 +143,7 @@
                         android:id="@+id/StgNum"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="99"
+                        android:text="-"
                         android:textColor="#57D3C2"
                         android:textSize="26sp"
                         android:textStyle="bold" />
@@ -157,7 +169,7 @@
                         android:id="@+id/itemNum"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="99"
+                        android:text="-"
                         android:textColor="#57D3C2"
                         android:textSize="26sp"
                         android:textStyle="bold" />
@@ -184,7 +196,7 @@
                         android:id="@+id/familyNum"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="99"
+                        android:text="-"
                         android:textColor="#57D3C2"
                         android:textSize="26sp"
                         android:textStyle="bold" />
@@ -206,11 +218,11 @@
             </LinearLayout>
 
             <ImageView
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
                 android:id="@+id/imageView18"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:adjustViewBounds="true"
                 android:src="@drawable/part2"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -219,58 +231,73 @@
 
             <LinearLayout
                 android:id="@+id/linearLayout20"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/part37"
+                app:layout_constraintEnd_toStartOf="@+id/part31"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView14">
 
 
                 <Button
                     android:id="@+id/camera_btn"
-                    android:background="@color/smssdk_transparent"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" />
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/smssdk_transparent" />
 
                 <Button
-                    android:layout_marginBottom="40dp"
-                    android:id="@+id/search_btn"
-                    android:background="@color/smssdk_transparent"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" />
+                    android:id="@+id/manage_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/smssdk_transparent" />
+
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="140dp"
-                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="50dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/part37"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout20">
+                app:layout_constraintStart_toStartOf="@+id/part31"
+                app:layout_constraintTop_toBottomOf="@+id/imageView15">
 
                 <Button
-                    android:layout_marginTop="40dp"
-                    android:id="@+id/manage_btn"
-                    android:background="@color/smssdk_transparent"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" />
+                    android:id="@+id/search_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+
+                    android:layout_weight="1"
+                    android:background="@color/smssdk_transparent" />
 
                 <Button
                     android:id="@+id/record_btn"
-                    android:layout_marginBottom="40dp"
-                    android:background="@color/smssdk_transparent"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" />
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/smssdk_transparent" />
 
             </LinearLayout>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/warning"
+                android:layout_width="11dp"
+                android:layout_height="11dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="33dp"
+                android:src="@drawable/warning"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/part33"
+                app:layout_constraintTop_toBottomOf="@id/part35" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
     <LinearLayout
         android:layout_marginLeft="40dp"
@@ -295,6 +322,14 @@
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
+
+        <TextView
+            android:id="@+id/audio"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+
         <TextView
             android:id="@+id/oneTOthree"
             android:layout_width="0dp"
@@ -308,8 +343,6 @@
             android:layout_weight="1" />
 
     </LinearLayout>
-
-
     <ImageView
         android:id="@+id/imageView13"
         android:layout_width="match_parent"
@@ -318,14 +351,5 @@
         android:src="@drawable/tarbar1"
         app:layout_constraintBottom_toBottomOf="parent" />
 
-    <ImageView
-        android:id="@+id/help_main"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:src="@drawable/help_main"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

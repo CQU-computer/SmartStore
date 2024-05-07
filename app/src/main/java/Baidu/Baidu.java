@@ -485,7 +485,6 @@ public class Baidu extends AppCompatActivity {
                 for (int i = 0; i < resultArray.length(); i++) {
                     JSONObject obj = resultArray.getJSONObject(i);
                     String root = obj.getString("root");
-                    System.out.println("!!!!!"+root);
                     if(root.contains("非自然图像") || root.contains("建筑") || root.contains("活动") || root.contains("人物") || root.contains("场景") || root.contains("二维码") || root.contains("风景") || root.contains("动物") || root.contains("动漫") || root.contains("交通工具"))
                         continue;
                     double score = obj.getDouble("score");

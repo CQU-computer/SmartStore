@@ -2,201 +2,339 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_height="match_parent"
+    android:background="#F9FFFE">
 
     <ScrollView
         android:id="@+id/scrollView5"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout15"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <!--标题-->
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <!--主背景-->
-                <!--第一个线性布局-->
-                <ImageView
-                    android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--主背景-->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/background2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--            透明图片-->
+            <ImageView
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/dummy_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- 标题-->
+            <LinearLayout
+                android:id="@+id/part1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="35dp"
+                    android:layout_weight="4"
+                    android:text="温暖的家  |  任务栏"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/help"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_weight="1"
+                    android:background="#00000000" />
+
+                <FrameLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/background2" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="35dp">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="4"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="35dp"
-                        android:text="温暖的家  |  任务栏"
-                        android:textStyle="bold" />
+                    android:layout_weight="1.1">
 
                     <Button
-                        android:id="@+id/help"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
+                        android:id="@+id/urgent_task"
+                        android:layout_width="35dp"
                         android:layout_height="match_parent"
-                        android:layout_marginStart="20dp"
                         android:background="#00000000" />
 
-                    <FrameLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1.1"
-                        android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/warning"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="40dp"
+                        android:src="@drawable/warning"
+                        android:visibility="invisible" />
 
-                        <Button
-                            android:id="@+id/urgent_task"
-                            android:layout_width="35dp"
-                            android:layout_height="match_parent"
-                            android:background="#00000000" />
+                </FrameLayout>
 
-                        <ImageView
-                            android:layout_marginRight="27dp"
-                            android:id="@+id/warning"
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:layout_gravity="right"
-                            android:src="@drawable/warning"
-                            android:visibility="invisible" />
+            </LinearLayout>
+            <!--月份-->
+            <LinearLayout
+                android:id="@+id/part2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/part1">
 
-                    </FrameLayout>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10" />
+                <!--会变的月份-->
+                <TextView
+                    android:id="@+id/month"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="5"
+                    android:textColor="#028E82" />
+            </LinearLayout>
 
-                </LinearLayout>
-                <!--第二个线性布局-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="90dp">
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/part32"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="180dp" />
+            <!--            透明图片-->
+            <ImageView
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/dummy_4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="70" />
-                    <!--会变的月份-->
-                    <TextView
-                        android:id="@+id/month"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="30dp"
-                        android:layout_weight="28"
-                        android:textColor="#006400" />
-                </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view2">
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view2" />
                 <!--滚动日历-->
                 <HorizontalScrollView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/part5"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="150dp"
-                    android:layout_marginEnd="30dp"
-                    android:scrollbars="none">
+                    android:layout_weight="15"
+                    android:scrollbars="none"
+                    app:layout_constraintTop_toBottomOf="@+id/view2">
 
                     <LinearLayout
                         android:id="@+id/date_time_bar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal" />
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="@id/part5"
+                        app:layout_constraintStart_toStartOf="@id/part5" />
 
                 </HorizontalScrollView>
-                <!--第三个线性布局，日期-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:layout_marginTop="285dp"
-                    android:layout_marginEnd="210dp"
-                    android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/date"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_marginStart="45dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_weight="1"
-                        android:textColor="#2F979C"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/day"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_marginStart="45dp"
-                        android:layout_marginBottom="6dp"
-                        android:layout_weight="1" />
-
-                </LinearLayout>
-                <!--点击日历后显示的文本-->
                 <TextView
-                    android:id="@+id/test"
+                    android:id="@+id/text2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+            </LinearLayout>
+
+
+            <!-- 中轴辅助线-->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.488" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelinex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.9" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/part34"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="330dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.08" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:text="2024年5月1日"
+                android:textColor="#2F979C"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/guideline2"
+                app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+            <TextView
+                android:id="@+id/day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="星期四"
+                android:textColor="#2F979C"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/guideline2"
+                app:layout_constraintTop_toBottomOf="@+id/date" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.35"
+                app:layout_constraintStart_toStartOf="@id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/view1">
+
+                <!--添加任务-->
+                <Button
+                    android:id="@+id/add_task"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="#00000000"
+                    android:contentDescription="add_task" />
+                <!--清空任务-->
+                <Button
+                    android:id="@+id/clear_task"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="#00000000"
+                    android:contentDescription="clear_task" />
+            </LinearLayout>
+
+            <!--          点击日历后显示当天的任务-->
+            <TextView
+                android:id="@+id/test"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!-- 任务清单部分 -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/part35"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="500dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.92" />
+            <!--            透明图片-->
+            <ImageView
+
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/dummy_5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="@id/guideline3"
+                app:layout_constraintStart_toStartOf="@id/guideline2"
+                app:layout_constraintTop_toBottomOf="@+id/view3">
+
+                <LinearLayout
+                    android:id="@+id/containerLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="400dp"
-                    android:textColor="#000000"
-                    android:textSize="30sp" />
-                <!--第四个线性布局，添加，清空任务-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:layout_marginStart="190dp"
-                    android:layout_marginTop="280dp"
-                    android:orientation="horizontal">
-                    <!--添加任务-->
-                    <Button
-                        android:id="@+id/add_task"
-                        style="?android:attr/buttonBarButtonStyle"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="15dp"
-                        android:layout_weight="1"
-                        android:background="#00000000"
-                        android:contentDescription="add_task" />
-                    <!--清空任务-->
-                    <Button
-                        android:id="@+id/clear_task"
-                        style="?android:attr/buttonBarButtonStyle"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginEnd="40dp"
-                        android:layout_marginBottom="15dp"
-                        android:layout_weight="1"
-                        android:background="#00000000"
-                        android:contentDescription="clear_task" />
-                </LinearLayout>
-                <!-- 任务清单部分 -->
-                <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="430dp"
-                    android:layout_marginEnd="20dp">
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-                    <LinearLayout
-                        android:id="@+id/containerLayout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+            </ScrollView>
 
-                    </LinearLayout>
-                </ScrollView>
-                <!-- 任务清单部分 -->
-            </RelativeLayout>
-        </LinearLayout>
+            <ImageView
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/dummy_6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--            显示当天任务-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
+
+    <!--导航栏-->
     <LinearLayout
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
@@ -210,12 +348,18 @@
         app:layout_constraintTop_toTopOf="@+id/imageView13">
 
         <TextView
+            android:id="@+id/twoTOone"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
         <TextView
-            android:id="@+id/twoTOone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/audio"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1" />

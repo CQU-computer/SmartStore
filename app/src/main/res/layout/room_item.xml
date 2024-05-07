@@ -34,11 +34,13 @@
 
     </LinearLayout>
 
-    <ScrollView
+    <HorizontalScrollView
         android:layout_marginTop="5dp"
-        android:layout_marginLeft="25dp"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:scrollbars="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/part_24">
@@ -48,6 +50,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
         </LinearLayout>
-    </ScrollView>
+    </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,18 +5,20 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
 
+import audio.audioTransform;
+import audio.openAudioDialog;
 import chattingCircle.Chattingcircle_recommend;
 import image_submit.Upload;
+import image_submit.attention_dialog;
 import in_out_rcd.in_out_rcd;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -35,14 +37,14 @@ public class  MainActivity extends AppCompatActivity {
         private Button camera_btn;
         private Button manage_btn;
         private Button record_btn;
-        private String family_num;
-        private String stg_num;
-        private String item_num;
+        private String family_num = "-";
+        private String stg_num = "-";
+        private String item_num = "-";
         private TextView dataF;
         private TextView dataS;
         private TextView dataI;
         private TextView help1_btn;
-        private ImageView helpMain_btn;
+    private ImageView warning;
 
     @Override
       protected void onCreate(Bundle savedInstanceState) {
@@ -65,22 +67,50 @@ public class  MainActivity extends AppCompatActivity {
         dataS = findViewById(R.id.StgNum);
         dataI = findViewById(R.id.itemNum);
         help1_btn = findViewById(R.id.help1);
-        helpMain_btn = findViewById(R.id.help_main);
-        help1_btn.setOnClickListener(v -> {
-            helpMain_btn.setVisibility(View.VISIBLE);
-            ScaleAnimation anim = new ScaleAnimation(0f, 1f, 0f, 1f, Animation.RESTART, 0.5f, Animation.RESTART, 0.5f);
-            anim.setDuration(500);
-            helpMain_btn.startAnimation(anim);
-        });
-        helpMain_btn.setOnClickListener(v -> helpMain_btn.setVisibility(View.GONE));
+        TextView goto2 = findViewById(R.id.oneTOtwo);
+        TextView goto3 = findViewById(R.id.oneTOthree);
+        TextView goto4 = findViewById(R.id.oneTOfour);
+        TextView audio = findViewById(R.id.audio);
+        warning = findViewById(R.id.warning);
 
+        audio.setOnLongClickListener(v -> {
+            openAudioDialog ad = new openAudioDialog(this,  (op,tmp) -> {
+                if(op != -1 && op != -2){
+                    audioTransform at = new audioTransform(op, this,tmp);
+                    at.audioStart();
+                }
+            });
+            ad.onCreateDialog();
+            return false;
+        });
+
+        help1_btn.setOnClickListener(v -> {
+            Intent intent = new Intent(this, help_activity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        });
         record_btn.setOnClickListener(v -> {
             startActivity(new Intent(this, in_out_rcd.class));
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         });
         camera_btn.setOnClickListener(v -> {
-            startActivity(new Intent(this, Upload.class));
-            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            System.out.println(layout_id + " " + stg_num);
+            if(layout_id.equals("-1") || stg_num .equals("0")){
+                attention_dialog dd = new attention_dialog("你的空间还未完善哦，添加场景-空间-储藏点后，才能入库哦~","完善空间" ,"去完善", "一会再来",this, isAccept -> {
+                    if(isAccept){
+                        Intent intent = new Intent(this, self_edit_layout.class);
+                        intent.putExtra("source", "search");
+                        startActivity(intent);
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        super.onBackPressed();
+                    }
+                });
+                dd.onCreate_Attention_Dialog();
+            }
+            else{
+                startActivity(new Intent(this, Upload.class));
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            }
         });
         search_btn.setOnClickListener(v -> {
             startActivity(new Intent(this, search.class));
@@ -90,39 +120,42 @@ public class  MainActivity extends AppCompatActivity {
             startActivity(new Intent(this, self_edit_layout.class));
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         });
-
-        TextView goto2 = findViewById(R.id.oneTOtwo);
-        TextView goto3 = findViewById(R.id.oneTOthree);
-        TextView goto4 = findViewById(R.id.oneTOfour);
-
         goto2.setOnClickListener(v -> {
             Intent intent = new Intent(this, Family.family.class);
             startActivity(intent);
             overridePendingTransition(0,0);
             finish();
         });
-
         goto3.setOnClickListener(v -> {
             Intent intent = new Intent(this, Chattingcircle_recommend.class);
             startActivity(intent);
             overridePendingTransition(0,0);
             finish();
         });
-
         goto4.setOnClickListener(v -> {
             Intent intent = new Intent(this, mine_page.class);
             startActivity(intent);
             overridePendingTransition(0,0);
             finish();
         });
-
+        warning.setClickable(false);
+        warning.setOnClickListener(v -> {
+            attention_dialog dd = new attention_dialog("你的空间还未完善哦，添加场景-空间-储藏点后，才能入库哦~","完善空间" ,"去完善", "一会再来",this, isAccept -> {
+                if(isAccept){
+                    Intent intent = new Intent(this, self_edit_layout.class);
+                    intent.putExtra("source", "search");
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                    super.onBackPressed();
+                }
+            });
+            dd.onCreate_Attention_Dialog();
+        });
         updateUI();
-        System.out.println("+++++++++++++++++++++++++++++++++++");
     }
 
     @Override
     protected void onResume() {
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!1111111111");
         super.onResume();
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -163,6 +196,8 @@ public class  MainActivity extends AppCompatActivity {
         dataF.setText(family_num);
         dataS.setText(stg_num);
         dataI.setText(item_num);
+
+        setWarning();
     }
     public void getFamilyNum(){
             OkHttpClient client = new OkHttpClient().newBuilder().build();
@@ -170,7 +205,6 @@ public class  MainActivity extends AppCompatActivity {
 
             RequestBody body = RequestBody.create(JSON, "");
             String url = "http://120.26.248.74:8080/main/getFamNum?layout_id=" + layout_id;
-            System.out.println("************"+url);
                     try {
                         Request request = new Request.Builder()
                                 .url(url)
@@ -188,7 +222,6 @@ public class  MainActivity extends AppCompatActivity {
                         }
                         response.body().close();
                     } catch (IOException e) {
-                        throw new RuntimeException(e);
                     }
         }
     public void getStgNum(){
@@ -215,7 +248,7 @@ public class  MainActivity extends AppCompatActivity {
             }
             response.body().close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            runOnUiThread(() -> Toast.makeText(getApplicationContext(), "网络未连接", Toast.LENGTH_SHORT).show());
         }
     }
     public void getItemNum(){
@@ -242,8 +275,14 @@ public class  MainActivity extends AppCompatActivity {
             }
             response.body().close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
         }
     }
+
+        public void setWarning(){
+            if(layout_id.equals("-1") || stg_num .equals("0")){
+                warning.setVisibility(View.VISIBLE);
+                warning.setClickable(true);
+            }
+        }
     }
 

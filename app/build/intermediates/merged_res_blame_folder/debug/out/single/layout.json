@@ -1,166 +1,190 @@
 [
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\upload_img.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\upload_img.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\recycleview_item.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\recycleview_item.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\mine_page.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\mine_page.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\waterfall_fixed_item1.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\waterfall_fixed_item1.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\fragment_first.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\fragment_first.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\task.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\task.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\search.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\search.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\attention_dialog.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\attention_dialog.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\activity_chatting_circle.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\activity_chatting_circle.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\search_dialog.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\search_dialog.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\mylayoutlistitem.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\mylayoutlistitem.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\data_item1.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\data_item1.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\fragment_second.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\fragment_second.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\room_item.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\room_item.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\data_item1.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\data_item1.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\discription_dialog.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\discription_dialog.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\activity_post.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\activity_post.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\activity_chattingcircle_recommend.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\activity_chattingcircle_recommend.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\item_card_item.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\item_card_item.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\family.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\family.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\activity_self_edit_layout.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\activity_self_edit_layout.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\inrecd.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\inrecd.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\single_item.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\single_item.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\upload_img.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\upload_img.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\item_layout_card.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\item_layout_card.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\audiodialog.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\audiodialog.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\attention_dialog.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\attention_dialog.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\in_out_rcd.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\in_out_rcd.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\activity_login.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\activity_login.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\mylayoutlistitem.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\mylayoutlistitem.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\fragment_first2.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\fragment_first2.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\add_dialog.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\add_dialog.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\activity_posting.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\activity_posting.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\waterfall_list_item.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\waterfall_list_item.xml"
+        "merged": "com.example.smartstore.app-mergeDebugResources-42:/layout/family.xml",
+        "source": "com.example.smartstore.app-main-45:/layout/family.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\image_edit.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\image_edit.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\activity_chatting_circle.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\activity_chatting_circle.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\waterfall_fixed_item1.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\waterfall_fixed_item1.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\item_card_item.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\item_card_item.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\date_item.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\date_item.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\single_item.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\single_item.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\task.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\task.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\fragment_first.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\fragment_first.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\inrecd.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\inrecd.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\fragment_second2.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\fragment_second2.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\discription_dialog.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\discription_dialog.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\stg_item.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\stg_item.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\chatting_my_content.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\chatting_my_content.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\activity_other_zhuye.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\activity_other_zhuye.xml"
     },
     {
-        "merged": "com.example.smartstore.app-mergeDebugResources-49:/layout/activity_chattingcircle_recommend.xml",
-        "source": "com.example.smartstore.app-main-52:/layout/activity_chattingcircle_recommend.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\waterfall_list_item.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\waterfall_list_item.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\search_dialog.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\search_dialog.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\item_layout_card.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\item_layout_card.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\family.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\family.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\image_edit.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\image_edit.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\activity_chattingcircle_recommend.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\activity_chattingcircle_recommend.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\dialog_user_list.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\dialog_user_list.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\item_list.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\item_list.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\search.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\search.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\activity_help.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\activity_help.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\chatting_my_content.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\chatting_my_content.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\dialog.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\dialog.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\fragment_first2.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\fragment_first2.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\activity_main.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\activity_baidu.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\activity_baidu.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\room_item.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\room_item.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\select_dialog.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\select_dialog.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\activity_posting.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\activity_posting.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\item_list.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\item_list.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\edit_item_card.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\edit_item_card.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\add_dialog.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\add_dialog.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\stg_item.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\stg_item.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\activity_post.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\activity_post.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\activity_baidu.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\activity_baidu.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\mine_page.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\mine_page.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\fragment_second2.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\fragment_second2.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\select_dialog.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\select_dialog.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\edit_item_card.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\edit_item_card.xml"
     },
     {
-        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-49:\\layout\\in_out_rcd.xml",
-        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-52:\\layout\\in_out_rcd.xml"
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\fragment_second.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\fragment_second.xml"
+    },
+    {
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\current_tasks_recycleview.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\current_tasks_recycleview.xml"
+    },
+    {
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\activity_help2.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\activity_help2.xml"
+    },
+    {
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\dialog.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\activity_self_edit_layout.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\activity_self_edit_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\activity_help.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\activity_help.xml"
+    },
+    {
+        "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\date_item.xml",
+        "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\date_item.xml"
     }
 ]

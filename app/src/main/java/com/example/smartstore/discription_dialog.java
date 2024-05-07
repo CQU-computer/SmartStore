@@ -17,12 +17,11 @@ public class discription_dialog extends Dialog {
     private String original;
     private PriorityListener listener;
     private Context context;
+
     public interface PriorityListener {
-        /**
-         * 回调函数，用于在Dialog的监听事件触发后刷新Activity的UI显示
-         */
         public void refreshPriorityUI(String string);
     }
+
     public discription_dialog(String original, Context context, int theme, PriorityListener listener) {
         super(context);
         this.original = original;

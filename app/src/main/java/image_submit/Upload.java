@@ -13,7 +13,6 @@ import android.provider.MediaStore;
 import android.provider.Settings;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextClock;
 import android.widget.TextView;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -70,6 +69,7 @@ public class Upload extends AppCompatActivity{
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+        overridePendingTransition(0,0);
     }
 
     //处理活动结果
@@ -86,6 +86,12 @@ public class Upload extends AppCompatActivity{
                     startActivity(intent2);
                 }
             });
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(0,0);
+    }
 
     //获取图片
     private void xzImage() {

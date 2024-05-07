@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,6 +27,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import audio.audioTransform;
+import audio.openAudioDialog;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -40,6 +43,7 @@ public class Chattingcircle_recommend extends AppCompatActivity implements Modul
     private ArrayList<String> user_ID_ = new ArrayList<>();
     private ArrayList<String> post_like_ = new ArrayList<>();
     private ArrayList<String> post_id_ = new ArrayList<>();
+    private ArrayList<String> post_uname_ = new ArrayList<>();
     private Context context;
     private RecyclerView recyclerView;
     int serverId;
@@ -56,6 +60,7 @@ public class Chattingcircle_recommend extends AppCompatActivity implements Modul
         SharedPreferences.Editor editor = preferences.edit();
         serverId = preferences.getInt("uer_id",-1);
         context = this;
+        TextView audio = findViewById(R.id.audio);
         Button commend = findViewById(R.id.commend);
         Button mine = findViewById(R.id.my_chatting_circle);
         ImageView commend_icon=findViewById(R.id.commend_icon);
@@ -64,6 +69,17 @@ public class Chattingcircle_recommend extends AppCompatActivity implements Modul
         TextView goto2 = findViewById(R.id.threeTOtwo);
         TextView goto4 = findViewById(R.id.threeTOfour);
         recyclerView = findViewById(R.id.list1);
+
+        audio.setOnLongClickListener(v -> {
+            openAudioDialog ad = new openAudioDialog(this,  (op,tmp) -> {
+                if(op != -1){
+                    audioTransform at = new audioTransform(op, this,tmp);
+                    at.audioStart();
+                }
+            });
+            ad.onCreateDialog();
+            return false;
+        });
 
         boolean shouldTriggerPostingBackClick = getIntent().getBooleanExtra("trigger_postingback_click", false);
         if(shouldTriggerPostingBackClick){
@@ -147,7 +163,7 @@ public class Chattingcircle_recommend extends AppCompatActivity implements Modul
     private List<ModuleItem> getModuleItemsData() {
         List<ModuleItem> moduleItems = new ArrayList<>();
 
-        ModuleItem fixedModule = new ModuleItem(ModuleItem.Type.FIXED, null, "","","","","","");
+        ModuleItem fixedModule = new ModuleItem(ModuleItem.Type.FIXED, null, "","","","","","","");
         moduleItems.add(fixedModule);
 
         for (int i = 0; i < bp_.size(); i++) {
@@ -159,7 +175,9 @@ public class Chattingcircle_recommend extends AppCompatActivity implements Modul
                     post_rls_time_.get(i),
                     user_ID_.get(i),
                     post_like_.get(i),
-                    post_id_.get(i)
+                    post_id_.get(i),
+                    post_uname_.get(i)
+
             );
 
             moduleItems.add(customModule);
@@ -193,6 +211,7 @@ public class Chattingcircle_recommend extends AppCompatActivity implements Modul
                     String partofptime = post_rls_time.substring(0, commaIndex);
                     int userid=jsonObject.getInt("uid");
                     String postid=jsonObject.getString("post_id");
+                    String uname=jsonObject.getString("uname");
 
                     post_name_.add(post_name);
                     bp_.add(bp);
@@ -201,6 +220,7 @@ public class Chattingcircle_recommend extends AppCompatActivity implements Modul
                     user_ID_.add(userid+"");
                     post_like_.add(post_likes);
                     post_id_.add(postid);
+                    post_uname_.add(uname);
                 }
             } else {
                 System.out.println("响应码: " + response.code());
@@ -210,7 +230,7 @@ public class Chattingcircle_recommend extends AppCompatActivity implements Modul
             }
             response.body().close();
         } catch (IOException | JSONException e) {
-            throw new RuntimeException(e);
+            runOnUiThread(() -> Toast.makeText(getApplicationContext(), "网络未连接", Toast.LENGTH_SHORT).show());
         }
     }
 
@@ -227,6 +247,7 @@ public class Chattingcircle_recommend extends AppCompatActivity implements Modul
         user_ID_.clear();
         post_like_.clear();
         post_id_.clear();
+        post_uname_.clear();
 
         Thread t1 = new Thread(this::getPost);
         t1.start();

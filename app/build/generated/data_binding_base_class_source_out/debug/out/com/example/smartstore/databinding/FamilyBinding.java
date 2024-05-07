@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.Guideline;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.smartstore.R;
@@ -25,6 +27,9 @@ public final class FamilyBinding implements ViewBinding {
 
   @NonNull
   public final Button addTask;
+
+  @NonNull
+  public final TextView audio;
 
   @NonNull
   public final Button clearTask;
@@ -42,6 +47,18 @@ public final class FamilyBinding implements ViewBinding {
   public final TextView day;
 
   @NonNull
+  public final Guideline guideline;
+
+  @NonNull
+  public final Guideline guideline2;
+
+  @NonNull
+  public final Guideline guideline3;
+
+  @NonNull
+  public final Guideline guidelinex;
+
+  @NonNull
   public final Button help;
 
   @NonNull
@@ -54,10 +71,34 @@ public final class FamilyBinding implements ViewBinding {
   public final TextView month;
 
   @NonNull
+  public final LinearLayout part1;
+
+  @NonNull
+  public final LinearLayout part2;
+
+  @NonNull
+  public final Guideline part32;
+
+  @NonNull
+  public final Guideline part34;
+
+  @NonNull
+  public final Guideline part35;
+
+  @NonNull
+  public final HorizontalScrollView part5;
+
+  @NonNull
   public final ScrollView scrollView5;
 
   @NonNull
   public final TextView test;
+
+  @NonNull
+  public final TextView text1;
+
+  @NonNull
+  public final TextView text2;
 
   @NonNull
   public final TextView twoTOfour;
@@ -72,32 +113,67 @@ public final class FamilyBinding implements ViewBinding {
   public final Button urgentTask;
 
   @NonNull
+  public final ImageView view1;
+
+  @NonNull
+  public final ImageView view2;
+
+  @NonNull
+  public final ImageView view3;
+
+  @NonNull
+  public final ImageView view4;
+
+  @NonNull
   public final ImageView warning;
 
   private FamilyBinding(@NonNull ConstraintLayout rootView, @NonNull Button addTask,
-      @NonNull Button clearTask, @NonNull LinearLayout containerLayout, @NonNull TextView date,
-      @NonNull LinearLayout dateTimeBar, @NonNull TextView day, @NonNull Button help,
-      @NonNull ImageView imageView13, @NonNull LinearLayout linearLayout15, @NonNull TextView month,
-      @NonNull ScrollView scrollView5, @NonNull TextView test, @NonNull TextView twoTOfour,
-      @NonNull TextView twoTOone, @NonNull TextView twoTOthree, @NonNull Button urgentTask,
+      @NonNull TextView audio, @NonNull Button clearTask, @NonNull LinearLayout containerLayout,
+      @NonNull TextView date, @NonNull LinearLayout dateTimeBar, @NonNull TextView day,
+      @NonNull Guideline guideline, @NonNull Guideline guideline2, @NonNull Guideline guideline3,
+      @NonNull Guideline guidelinex, @NonNull Button help, @NonNull ImageView imageView13,
+      @NonNull LinearLayout linearLayout15, @NonNull TextView month, @NonNull LinearLayout part1,
+      @NonNull LinearLayout part2, @NonNull Guideline part32, @NonNull Guideline part34,
+      @NonNull Guideline part35, @NonNull HorizontalScrollView part5,
+      @NonNull ScrollView scrollView5, @NonNull TextView test, @NonNull TextView text1,
+      @NonNull TextView text2, @NonNull TextView twoTOfour, @NonNull TextView twoTOone,
+      @NonNull TextView twoTOthree, @NonNull Button urgentTask, @NonNull ImageView view1,
+      @NonNull ImageView view2, @NonNull ImageView view3, @NonNull ImageView view4,
       @NonNull ImageView warning) {
     this.rootView = rootView;
     this.addTask = addTask;
+    this.audio = audio;
     this.clearTask = clearTask;
     this.containerLayout = containerLayout;
     this.date = date;
     this.dateTimeBar = dateTimeBar;
     this.day = day;
+    this.guideline = guideline;
+    this.guideline2 = guideline2;
+    this.guideline3 = guideline3;
+    this.guidelinex = guidelinex;
     this.help = help;
     this.imageView13 = imageView13;
     this.linearLayout15 = linearLayout15;
     this.month = month;
+    this.part1 = part1;
+    this.part2 = part2;
+    this.part32 = part32;
+    this.part34 = part34;
+    this.part35 = part35;
+    this.part5 = part5;
     this.scrollView5 = scrollView5;
     this.test = test;
+    this.text1 = text1;
+    this.text2 = text2;
     this.twoTOfour = twoTOfour;
     this.twoTOone = twoTOone;
     this.twoTOthree = twoTOthree;
     this.urgentTask = urgentTask;
+    this.view1 = view1;
+    this.view2 = view2;
+    this.view3 = view3;
+    this.view4 = view4;
     this.warning = warning;
   }
 
@@ -134,6 +210,12 @@ public final class FamilyBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.audio;
+      TextView audio = ViewBindings.findChildViewById(rootView, id);
+      if (audio == null) {
+        break missingId;
+      }
+
       id = R.id.clear_task;
       Button clearTask = ViewBindings.findChildViewById(rootView, id);
       if (clearTask == null) {
@@ -164,6 +246,30 @@ public final class FamilyBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.guideline;
+      Guideline guideline = ViewBindings.findChildViewById(rootView, id);
+      if (guideline == null) {
+        break missingId;
+      }
+
+      id = R.id.guideline2;
+      Guideline guideline2 = ViewBindings.findChildViewById(rootView, id);
+      if (guideline2 == null) {
+        break missingId;
+      }
+
+      id = R.id.guideline3;
+      Guideline guideline3 = ViewBindings.findChildViewById(rootView, id);
+      if (guideline3 == null) {
+        break missingId;
+      }
+
+      id = R.id.guidelinex;
+      Guideline guidelinex = ViewBindings.findChildViewById(rootView, id);
+      if (guidelinex == null) {
+        break missingId;
+      }
+
       id = R.id.help;
       Button help = ViewBindings.findChildViewById(rootView, id);
       if (help == null) {
@@ -188,6 +294,42 @@ public final class FamilyBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.part1;
+      LinearLayout part1 = ViewBindings.findChildViewById(rootView, id);
+      if (part1 == null) {
+        break missingId;
+      }
+
+      id = R.id.part2;
+      LinearLayout part2 = ViewBindings.findChildViewById(rootView, id);
+      if (part2 == null) {
+        break missingId;
+      }
+
+      id = R.id.part32;
+      Guideline part32 = ViewBindings.findChildViewById(rootView, id);
+      if (part32 == null) {
+        break missingId;
+      }
+
+      id = R.id.part34;
+      Guideline part34 = ViewBindings.findChildViewById(rootView, id);
+      if (part34 == null) {
+        break missingId;
+      }
+
+      id = R.id.part35;
+      Guideline part35 = ViewBindings.findChildViewById(rootView, id);
+      if (part35 == null) {
+        break missingId;
+      }
+
+      id = R.id.part5;
+      HorizontalScrollView part5 = ViewBindings.findChildViewById(rootView, id);
+      if (part5 == null) {
+        break missingId;
+      }
+
       id = R.id.scrollView5;
       ScrollView scrollView5 = ViewBindings.findChildViewById(rootView, id);
       if (scrollView5 == null) {
@@ -197,6 +339,18 @@ public final class FamilyBinding implements ViewBinding {
       id = R.id.test;
       TextView test = ViewBindings.findChildViewById(rootView, id);
       if (test == null) {
+        break missingId;
+      }
+
+      id = R.id.text1;
+      TextView text1 = ViewBindings.findChildViewById(rootView, id);
+      if (text1 == null) {
+        break missingId;
+      }
+
+      id = R.id.text2;
+      TextView text2 = ViewBindings.findChildViewById(rootView, id);
+      if (text2 == null) {
         break missingId;
       }
 
@@ -224,15 +378,41 @@ public final class FamilyBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.view1;
+      ImageView view1 = ViewBindings.findChildViewById(rootView, id);
+      if (view1 == null) {
+        break missingId;
+      }
+
+      id = R.id.view2;
+      ImageView view2 = ViewBindings.findChildViewById(rootView, id);
+      if (view2 == null) {
+        break missingId;
+      }
+
+      id = R.id.view3;
+      ImageView view3 = ViewBindings.findChildViewById(rootView, id);
+      if (view3 == null) {
+        break missingId;
+      }
+
+      id = R.id.view4;
+      ImageView view4 = ViewBindings.findChildViewById(rootView, id);
+      if (view4 == null) {
+        break missingId;
+      }
+
       id = R.id.warning;
       ImageView warning = ViewBindings.findChildViewById(rootView, id);
       if (warning == null) {
         break missingId;
       }
 
-      return new FamilyBinding((ConstraintLayout) rootView, addTask, clearTask, containerLayout,
-          date, dateTimeBar, day, help, imageView13, linearLayout15, month, scrollView5, test,
-          twoTOfour, twoTOone, twoTOthree, urgentTask, warning);
+      return new FamilyBinding((ConstraintLayout) rootView, addTask, audio, clearTask,
+          containerLayout, date, dateTimeBar, day, guideline, guideline2, guideline3, guidelinex,
+          help, imageView13, linearLayout15, month, part1, part2, part32, part34, part35, part5,
+          scrollView5, test, text1, text2, twoTOfour, twoTOone, twoTOthree, urgentTask, view1,
+          view2, view3, view4, warning);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

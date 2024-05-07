@@ -23,6 +23,9 @@ public final class ActivityChattingcircleRecommendBinding implements ViewBinding
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final TextView audio;
+
+  @NonNull
   public final TextView cBlack;
 
   @NonNull
@@ -56,11 +59,13 @@ public final class ActivityChattingcircleRecommendBinding implements ViewBinding
   public final TextView threeTOtwo;
 
   private ActivityChattingcircleRecommendBinding(@NonNull ConstraintLayout rootView,
-      @NonNull TextView cBlack, @NonNull ImageView cCircleComment, @NonNull Button commend,
-      @NonNull ImageView commendIcon, @NonNull ImageView imageView11, @NonNull RecyclerView list1,
-      @NonNull Button myChattingCircle, @NonNull ImageView myCircleIcon,
-      @NonNull TextView threeTOfour, @NonNull TextView threeTOone, @NonNull TextView threeTOtwo) {
+      @NonNull TextView audio, @NonNull TextView cBlack, @NonNull ImageView cCircleComment,
+      @NonNull Button commend, @NonNull ImageView commendIcon, @NonNull ImageView imageView11,
+      @NonNull RecyclerView list1, @NonNull Button myChattingCircle,
+      @NonNull ImageView myCircleIcon, @NonNull TextView threeTOfour, @NonNull TextView threeTOone,
+      @NonNull TextView threeTOtwo) {
     this.rootView = rootView;
+    this.audio = audio;
     this.cBlack = cBlack;
     this.cCircleComment = cCircleComment;
     this.commend = commend;
@@ -101,6 +106,12 @@ public final class ActivityChattingcircleRecommendBinding implements ViewBinding
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.audio;
+      TextView audio = ViewBindings.findChildViewById(rootView, id);
+      if (audio == null) {
+        break missingId;
+      }
+
       id = R.id.c_black;
       TextView cBlack = ViewBindings.findChildViewById(rootView, id);
       if (cBlack == null) {
@@ -167,7 +178,7 @@ public final class ActivityChattingcircleRecommendBinding implements ViewBinding
         break missingId;
       }
 
-      return new ActivityChattingcircleRecommendBinding((ConstraintLayout) rootView, cBlack,
+      return new ActivityChattingcircleRecommendBinding((ConstraintLayout) rootView, audio, cBlack,
           cCircleComment, commend, commendIcon, imageView11, list1, myChattingCircle, myCircleIcon,
           threeTOfour, threeTOone, threeTOtwo);
     }

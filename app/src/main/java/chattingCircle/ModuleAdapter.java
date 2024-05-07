@@ -60,7 +60,9 @@ public class ModuleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        ModuleItem moduleItem = moduleItems.get(position);
+        if(moduleItems.size() - 1 - position == 0)
+            return;
+        ModuleItem moduleItem = moduleItems.get(moduleItems.size() - 1 - position);
         switch (holder.getItemViewType()) {
             case VIEW_TYPE_FIXED:
                 ((FixedViewHolder) holder).bind(moduleItem);
@@ -132,8 +134,15 @@ public class ModuleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
             customText.setText(item.Title);
             customImage.setImageResource(R.drawable.nullp);
-            userid.setText(item.userID);
+            userid.setText(item.uname);
             likes.setText(item.like);
+
+            userid.setOnClickListener(v->{
+                Intent intent = new Intent(context, OtherZhuye.class);
+                intent.putExtra("poster_id", item.userID);
+                context.startActivity(intent);
+                ((Activity)context).overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            });
 
             itemView.setOnClickListener(v -> {
                 Intent intent = new Intent(context, Postings.class);

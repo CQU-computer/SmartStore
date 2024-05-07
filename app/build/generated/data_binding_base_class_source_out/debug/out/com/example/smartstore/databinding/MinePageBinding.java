@@ -38,6 +38,9 @@ public final class MinePageBinding implements ViewBinding {
   public final TextView HonorNextLevel;
 
   @NonNull
+  public final TextView audio;
+
+  @NonNull
   public final Button checkinButton;
 
   @NonNull
@@ -68,10 +71,10 @@ public final class MinePageBinding implements ViewBinding {
   public final ImageView myFeedbackBtn;
 
   @NonNull
-  public final TextView myFeedbackBtn1;
+  public final ImageView myLikeBtn;
 
   @NonNull
-  public final ImageView myLikeBtn;
+  public final ImageView myPeoBtn;
 
   @NonNull
   public final ImageView myRecordBtn;
@@ -123,21 +126,22 @@ public final class MinePageBinding implements ViewBinding {
 
   private MinePageBinding(@NonNull ConstraintLayout rootView, @NonNull Button HelpBtn,
       @NonNull ImageView HonorLevel, @NonNull TextView HonorLevelText,
-      @NonNull TextView HonorNextLevel, @NonNull Button checkinButton, @NonNull TextView con,
-      @NonNull Button contactBtn, @NonNull ProgressBar expProgress, @NonNull TextView fourTOine,
-      @NonNull TextView fourTOthree, @NonNull TextView fourTOtwo, @NonNull ImageView imageView12,
-      @NonNull TextView maxExp, @NonNull ImageView myFeedbackBtn, @NonNull TextView myFeedbackBtn1,
-      @NonNull ImageView myLikeBtn, @NonNull ImageView myRecordBtn, @NonNull LinearLayout part10,
-      @NonNull ImageView part11, @NonNull LinearLayout part12, @NonNull LinearLayout part13,
-      @NonNull LinearLayout part8, @NonNull LinearLayout part9, @NonNull ImageView rank,
-      @NonNull LinearLayout rootLayout, @NonNull Button settingBtn, @NonNull TextView userExp,
-      @NonNull TextView userId, @NonNull Circle userImg, @NonNull EditText userName1,
-      @NonNull TextView userRank, @NonNull EditText userSignature1) {
+      @NonNull TextView HonorNextLevel, @NonNull TextView audio, @NonNull Button checkinButton,
+      @NonNull TextView con, @NonNull Button contactBtn, @NonNull ProgressBar expProgress,
+      @NonNull TextView fourTOine, @NonNull TextView fourTOthree, @NonNull TextView fourTOtwo,
+      @NonNull ImageView imageView12, @NonNull TextView maxExp, @NonNull ImageView myFeedbackBtn,
+      @NonNull ImageView myLikeBtn, @NonNull ImageView myPeoBtn, @NonNull ImageView myRecordBtn,
+      @NonNull LinearLayout part10, @NonNull ImageView part11, @NonNull LinearLayout part12,
+      @NonNull LinearLayout part13, @NonNull LinearLayout part8, @NonNull LinearLayout part9,
+      @NonNull ImageView rank, @NonNull LinearLayout rootLayout, @NonNull Button settingBtn,
+      @NonNull TextView userExp, @NonNull TextView userId, @NonNull Circle userImg,
+      @NonNull EditText userName1, @NonNull TextView userRank, @NonNull EditText userSignature1) {
     this.rootView = rootView;
     this.HelpBtn = HelpBtn;
     this.HonorLevel = HonorLevel;
     this.HonorLevelText = HonorLevelText;
     this.HonorNextLevel = HonorNextLevel;
+    this.audio = audio;
     this.checkinButton = checkinButton;
     this.con = con;
     this.contactBtn = contactBtn;
@@ -148,8 +152,8 @@ public final class MinePageBinding implements ViewBinding {
     this.imageView12 = imageView12;
     this.maxExp = maxExp;
     this.myFeedbackBtn = myFeedbackBtn;
-    this.myFeedbackBtn1 = myFeedbackBtn1;
     this.myLikeBtn = myLikeBtn;
+    this.myPeoBtn = myPeoBtn;
     this.myRecordBtn = myRecordBtn;
     this.part10 = part10;
     this.part11 = part11;
@@ -219,6 +223,12 @@ public final class MinePageBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.audio;
+      TextView audio = ViewBindings.findChildViewById(rootView, id);
+      if (audio == null) {
+        break missingId;
+      }
+
       id = R.id.checkin_button;
       Button checkinButton = ViewBindings.findChildViewById(rootView, id);
       if (checkinButton == null) {
@@ -279,15 +289,15 @@ public final class MinePageBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.my_feedback_btn1;
-      TextView myFeedbackBtn1 = ViewBindings.findChildViewById(rootView, id);
-      if (myFeedbackBtn1 == null) {
-        break missingId;
-      }
-
       id = R.id.my_like_btn;
       ImageView myLikeBtn = ViewBindings.findChildViewById(rootView, id);
       if (myLikeBtn == null) {
+        break missingId;
+      }
+
+      id = R.id.my_peo_btn;
+      ImageView myPeoBtn = ViewBindings.findChildViewById(rootView, id);
+      if (myPeoBtn == null) {
         break missingId;
       }
 
@@ -388,10 +398,10 @@ public final class MinePageBinding implements ViewBinding {
       }
 
       return new MinePageBinding((ConstraintLayout) rootView, HelpBtn, HonorLevel, HonorLevelText,
-          HonorNextLevel, checkinButton, con, contactBtn, expProgress, fourTOine, fourTOthree,
-          fourTOtwo, imageView12, maxExp, myFeedbackBtn, myFeedbackBtn1, myLikeBtn, myRecordBtn,
-          part10, part11, part12, part13, part8, part9, rank, rootLayout, settingBtn, userExp,
-          userId, userImg, userName1, userRank, userSignature1);
+          HonorNextLevel, audio, checkinButton, con, contactBtn, expProgress, fourTOine,
+          fourTOthree, fourTOtwo, imageView12, maxExp, myFeedbackBtn, myLikeBtn, myPeoBtn,
+          myRecordBtn, part10, part11, part12, part13, part8, part9, rank, rootLayout, settingBtn,
+          userExp, userId, userImg, userName1, userRank, userSignature1);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -115,10 +115,7 @@ public class self_edit_layout extends AppCompatActivity {
                     t1.start();
                     try {
                         t1.join();         //云端插入完成
-                        update_layout_ui();       //更新场景ui
-                        Toast.makeText(this,"新建成功",Toast.LENGTH_SHORT).show();
                     } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
                     }
                 }
             });
@@ -132,8 +129,6 @@ public class self_edit_layout extends AppCompatActivity {
                     t1.start();
                     try {
                         t1.join();         //云端插入完成
-                        update_room_ui(room_title);       //更新场景ui
-                        Toast.makeText(this,"新建成功",Toast.LENGTH_SHORT).show();
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
@@ -237,7 +232,6 @@ public class self_edit_layout extends AppCompatActivity {
                     try {
                         t1.join();
                         update_stg_ui(v, stg_title);
-                        Toast.makeText(this,"新建成功",Toast.LENGTH_SHORT).show();
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
@@ -306,7 +300,6 @@ public class self_edit_layout extends AppCompatActivity {
                         try {
                             t1.join();
                             update_stg_ui(v, stg_title);
-                            Toast.makeText(this,"新建成功",Toast.LENGTH_SHORT).show();
                             cnt_stg.setText(String.valueOf(user_stgs.size()));
                         } catch (InterruptedException e) {
                             throw new RuntimeException(e);
@@ -352,7 +345,6 @@ public class self_edit_layout extends AppCompatActivity {
             }
             response.body().close();
         } catch (IOException | JSONException e) {
-            throw new RuntimeException(e);
         }
     }  //只执行一次，用于获得所有layout id和name
     public void layout_get_room() {  //在每次场景切换执行,拉取当前场景所有room
@@ -366,7 +358,6 @@ public class self_edit_layout extends AppCompatActivity {
         RequestBody body = RequestBody.create(JSON, "");
         String url = "http://120.26.248.74:8080/getRoomId?layout_id=" + queryParams;
 
-        System.out.println("线程2");
         try {
             Request request = new Request.Builder()
                     .url(url)
@@ -393,7 +384,7 @@ public class self_edit_layout extends AppCompatActivity {
             }
             response.body().close();
         } catch (IOException | JSONException e) {
-            throw new RuntimeException(e);
+            runOnUiThread(() -> Toast.makeText(getApplicationContext(), "网络未连接", Toast.LENGTH_SHORT).show());
         }
     }
     public void room_get_stgs() {
@@ -409,7 +400,6 @@ public class self_edit_layout extends AppCompatActivity {
             String url = "http://120.26.248.74:8080/getStgId?room_id=" + queryParams;
 
             try {
-                System.out.println("线程3");
                 Request request = new Request.Builder()
                         .url(url)
                         .post(body)
@@ -425,7 +415,6 @@ public class self_edit_layout extends AppCompatActivity {
                         String snm = jsonObject.getString("stg_name");
                         String sid = jsonObject.getString("stg_id");
 
-                        System.out.println("xxx" + room_stgs);
                         user_stgs.put(snm,Integer.parseInt(sid));
                         room_stgs.get(key_room).add(snm);
                     }
@@ -436,7 +425,6 @@ public class self_edit_layout extends AppCompatActivity {
                 }
                 response.body().close();
             } catch (IOException | JSONException e) {
-                throw new RuntimeException(e);
             }
         }
     }
@@ -457,6 +445,11 @@ public class self_edit_layout extends AppCompatActivity {
             if (response.isSuccessful()) {
                 assert response.body() != null;
                 user_layout.put(lName,Integer.parseInt(response.body().string()));
+                runOnUiThread(() -> {
+                    Toast.makeText(getApplicationContext(), "新建成功", Toast.LENGTH_SHORT).show();
+                    update_layout_ui();
+                });
+
             } else {
                 System.out.println("响应码: " + response.code());
                 String responseBody = response.body().string();
@@ -465,7 +458,7 @@ public class self_edit_layout extends AppCompatActivity {
             assert response.body() != null;
             response.body().close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            runOnUiThread(() -> Toast.makeText(getApplicationContext(), "网络未连接", Toast.LENGTH_SHORT).show());
         }
     }
     public void InsertRoom(String rName){
@@ -484,6 +477,10 @@ public class self_edit_layout extends AppCompatActivity {
             if (response.isSuccessful()) {
                 assert response.body() != null;
                 user_room.put(rName,Integer.parseInt(response.body().string()));
+                runOnUiThread(() -> {
+                    Toast.makeText(getApplicationContext(), "新建成功", Toast.LENGTH_SHORT).show();
+                    update_room_ui(rName);
+                });
             } else {
                 System.out.println("响应码: " + response.code());
                 String responseBody = response.body().string();
@@ -492,7 +489,7 @@ public class self_edit_layout extends AppCompatActivity {
             assert response.body() != null;
             response.body().close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            runOnUiThread(() -> Toast.makeText(getApplicationContext(), "网络未连接", Toast.LENGTH_SHORT).show());
         }
     }
     public void InsertStg(Integer room_id,  String sName){
@@ -511,6 +508,9 @@ public class self_edit_layout extends AppCompatActivity {
             if (response.isSuccessful()) {
                 assert response.body() != null;
                 user_stgs.put(sName,Integer.parseInt(response.body().string()));
+                runOnUiThread(() -> {
+                    Toast.makeText(getApplicationContext(), "新建成功", Toast.LENGTH_SHORT).show();
+                });
             } else {
                 System.out.println("响应码: " + response.code());
                 String responseBody = response.body().string();
@@ -519,7 +519,7 @@ public class self_edit_layout extends AppCompatActivity {
             assert response.body() != null;
             response.body().close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            runOnUiThread(() -> Toast.makeText(getApplicationContext(), "网络未连接", Toast.LENGTH_SHORT).show());
         }
     }
     @Override
@@ -528,6 +528,7 @@ public class self_edit_layout extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("source", "self_edit");
         startActivity(intent);
+        overridePendingTransition(0,0);
         super.onBackPressed();
     }
     public void allClear(){

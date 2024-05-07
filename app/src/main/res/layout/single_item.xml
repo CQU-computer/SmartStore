@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/star_thing_example_1" />
+            android:src="@drawable/icon" />
     </androidx.cardview.widget.CardView>
 
     <ImageView
@@ -44,7 +44,7 @@
         android:background="@drawable/circle_text"
         android:gravity="center"
         android:paddingHorizontal="10dp"
-        android:text="阿司匹林"
+        android:text=""
         android:textColor="#238F7F"
         android:textSize="11sp"
         android:textStyle="bold" />
@@ -56,7 +56,7 @@
         android:layout_below="@+id/itemtitle"
         android:lines="3"
         android:layout_marginTop="5dp"
-        android:text="卧室 - 1号床头柜 - 第3抽屉"
+        android:text=""
         android:textColor="#000000"
         android:textSize="11sp"
         android:textStyle="normal" />
@@ -68,7 +68,7 @@
         android:layout_below="@+id/item_disciption"
 
 
-        android:text="2024.12.12"
+        android:text=""
         android:textColor="#BB000000"
         android:textSize="11sp" />
 

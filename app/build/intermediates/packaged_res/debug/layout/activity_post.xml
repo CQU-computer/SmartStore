@@ -96,12 +96,12 @@
                 android:layout_height="0dp"
                 android:layout_weight="4">
                 <ImageView
-                    android:background="#55A6E4EC"
                     android:id="@+id/media"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitCenter" />
                 <TextView
+                    android:background="#55A6E4EC"
                     android:id="@+id/post_text_view_on_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
