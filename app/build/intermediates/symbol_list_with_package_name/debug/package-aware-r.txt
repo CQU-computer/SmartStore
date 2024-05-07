@@ -3054,6 +3054,7 @@ drawable goto_sign_up
 drawable guizi
 drawable help2
 drawable help_addlay
+drawable help_ai
 drawable help_rcd
 drawable help_search
 drawable hlp_pic_btn
@@ -3086,6 +3087,7 @@ drawable light_btn
 drawable line
 drawable line_under_task
 drawable load_cmra_btn
+drawable loading
 drawable m3_appbar_background
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -3651,6 +3653,7 @@ id header_title
 id help
 id help1
 id help_addlay
+id help_ai
 id help_rcd
 id help_return
 id help_search
@@ -3769,6 +3772,7 @@ id linearLayout21
 id linearLayout22
 id linearLayout23
 id linearLayout24
+id linearLayout25
 id linearLayout3
 id linearLayout4
 id linearLayout5
@@ -3791,6 +3795,8 @@ id ll_voice
 id load_by_camera
 id load_by_camera_2
 id load_by_photo
+id loading
+id loading2
 id login_in_judge_star
 id login_password_edit_text
 id login_userTel_edit_text
@@ -4163,6 +4169,7 @@ id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
 id task_date
+id task_layout_title
 id task_op
 id test
 id text

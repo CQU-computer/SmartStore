@@ -50,6 +50,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
+                    android:id="@+id/task_layout_title"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="35dp"
@@ -105,7 +106,6 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="10" />
-                <!--会变的月份-->
                 <TextView
                     android:id="@+id/month"
                     android:layout_width="0dp"

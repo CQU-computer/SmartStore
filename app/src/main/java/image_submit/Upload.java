@@ -22,6 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.smartstore.MainActivity;
 import com.example.smartstore.R;
+import com.example.smartstore.help_activity;
 
 import java.io.File;
 
@@ -50,6 +51,14 @@ public class Upload extends AppCompatActivity{
         Button getImage = findViewById(R.id.load_by_photo);    //通过相册获取图片
         Button load_by_camera = findViewById(R.id.load_by_camera);    //通过拍照获取图片
         ImageView load_by_camera_2 = findViewById(R.id.load_by_camera_2);  //通过拍照获取图片
+        Button scan_help = findViewById(R.id.scan_help);
+
+        scan_help.setOnClickListener(v -> {
+            Intent intent = new Intent(this, help_activity.class);
+            intent.putExtra("source", "scan");
+            startActivity(intent);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        });
 
         load_by_camera_2.setOnClickListener(v -> {
             ImageSubmitUtil isu = new ImageSubmitUtil(context);
@@ -95,8 +104,8 @@ public class Upload extends AppCompatActivity{
 
     //获取图片
     private void xzImage() {
-        if (checkSelfPermission(Manifest.permission.READ_MEDIA_IMAGES) != PackageManager.PERMISSION_GRANTED){
-            requestPermissions(new String[]{Manifest.permission.READ_MEDIA_IMAGES}, STORAGE_PERMISSION);
+        if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+            requestPermissions(new String[]{Manifest.permission.CAMERA}, STORAGE_PERMISSION);
             return;
         }
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -110,7 +119,6 @@ public class Upload extends AppCompatActivity{
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == STORAGE_PERMISSION) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // 权限已经被授予，不需要执行打开设置的操作
             }
             else {
                 attention_dialog dd = new attention_dialog("开启读取照片权限，\n就可以上传自己宝贝的图片啦!" ,"获取照片权限未开启哦！","去开启", "下次再来",this, isAccept -> {

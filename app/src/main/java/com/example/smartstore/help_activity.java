@@ -17,6 +17,7 @@ public class help_activity extends AppCompatActivity implements View.OnClickList
     private ImageView img3;
     private ImageView img4;
     private Button btn;
+    private ImageView img1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,7 @@ public class help_activity extends AppCompatActivity implements View.OnClickList
         btn4 = findViewById(R.id.btn_4);
         btn = findViewById(R.id.help_return);
 
-//        ImageView img1 = findViewById(R.id.)
+        img1 = findViewById(R.id.help_ai);
         img2 = findViewById(R.id.help_rcd);
         img3 = findViewById(R.id.help_addlay);
         img4 = findViewById(R.id.help_search);
@@ -47,39 +48,39 @@ public class help_activity extends AppCompatActivity implements View.OnClickList
         if (extras != null) {
             String source = extras.getString("where");
             if (source != null && source.equals("search")) {
-                img4.performClick();
+                btn4.performClick();
             }
-//            else if(source != null && source.equals("scan")) {
-//                img1.performClick();
-//            }
+            else if(source != null && source.equals("scan")) {
+                btn1.performClick();
+            }
         }
     }
 
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.btn_1){
-//            img1.setVisibility(View.VISIBLE);
+            img1.setVisibility(View.VISIBLE);
             img2.setVisibility(View.GONE);
             img3.setVisibility(View.GONE);
             img4.setVisibility(View.GONE);
         }
 
         else if(v.getId() == R.id.btn_2){
-//            img1.setVisibility(View.GONE);
+            img1.setVisibility(View.GONE);
             img2.setVisibility(View.VISIBLE);
             img3.setVisibility(View.GONE);
             img4.setVisibility(View.GONE);
         }
 
         else if(v.getId() == R.id.btn_3){
-//            img1.setVisibility(View.GONE);
+            img1.setVisibility(View.GONE);
             img2.setVisibility(View.GONE);
             img3.setVisibility(View.VISIBLE);
             img4.setVisibility(View.GONE);
         }
 
         else if(v.getId() == R.id.btn_4){
-//            img1.setVisibility(View.GONE);
+            img1.setVisibility(View.GONE);
             img2.setVisibility(View.GONE);
             img3.setVisibility(View.GONE);
             img4.setVisibility(View.VISIBLE);

@@ -73,6 +73,7 @@ public class family extends AppCompatActivity {
     private int Current_layout_id;//当前场景id
     private int uid;//当前用户id
     private ArrayList<String> user_list=new ArrayList<String>();//用于存放当前场景下的所有用户
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,40 +111,9 @@ public class family extends AppCompatActivity {
         }
 
         updateUI(0);
-//        //先清空容器，避免重复拉取
-//        containerLayout.removeAllViews();
-//        for (Task task:taskList){
-//            View customView = getLayoutInflater().inflate(R.layout.task, null);
-//            TextView textView1 = customView.findViewById(R.id.textView1);
-//            TextView textView2 = customView.findViewById(R.id.textView2);
-//            TextView textView3 = customView.findViewById(R.id.textView3);
-//            TextView textViewDate = customView.findViewById(R.id.task_date);
-//            Button actionbutton=customView.findViewById(R.id.task_op);
-//            ImageView start_task=customView.findViewById(R.id.start_task);
-//            ImageView stop_task=customView.findViewById(R.id.stop_task);
-//            // 设置TextView的文本
-//            textView1.setText(task.getTitle());
-//            textView2.setText(task.getContent());
-//            textView3.setText(task.getPerson());
-//            textViewDate.setText(task.getDate()); // 设置日期TextView的文本
-////            设置任务状态
-//            if(task.getState()==1){
-//                start_task.setVisibility(VISIBLE);
-//                stop_task.setVisibility(INVISIBLE);
-//            }else {
-//                start_task.setVisibility(INVISIBLE);
-//                stop_task.setVisibility(VISIBLE);
-//            }
-//            // 将Task对象作为标签附加到视图上
-//            customView.setTag(task);
-//            // 将自定义布局的实例添加到containerLayout中
-//            containerLayout.addView(customView);
-//            actionbutton.setOnClickListener(v -> {
-//                showTaskOptionsDialog(customView); // 显示任务选项弹窗
-//            });
-//        }
 
-        //过期任务提醒
+        TextView tv = findViewById(R.id.task_layout_title);
+        tv.setText(Current_layout + " | " + "任务栏");
 
         Button urgentButton =  findViewById(R.id.urgent_task);
         // 判断今天是否有未完成的任务且时间不足五小时
@@ -151,23 +121,9 @@ public class family extends AppCompatActivity {
             ImageView warn=findViewById(R.id.warning);
             warn.setVisibility(VISIBLE);
             urgentButton.setOnClickListener(v -> {
-                //****提醒弹窗
-                LayoutInflater inflater = getLayoutInflater();
-                View dialogView = inflater.inflate(R.layout.attention_dialog, null);
-                AlertDialog.Builder builder = new AlertDialog.Builder(family.this);
-                builder.setView(dialogView); // 设置自定义视图
-                TextView title=dialogView.findViewById(R.id.attention_Title);
-                TextView contennt=dialogView.findViewById(R.id.attention_content);
-                TextView return2=dialogView.findViewById(R.id.attention_button_text);
-                title.setText("过期任务提醒");
-                contennt.setText("距离今天结束不足五小时，还有待完成的任务");
-                return2.setText("确认");
-
-                final AlertDialog dialog = builder.create();
-                return2.setOnClickListener(v1 -> {
-                    dialog.dismiss(); // 关闭弹窗
+                attention_dialog dd = new attention_dialog("举例今天结束还有不足五小时，你还有任务未完成哦~","任务过期提醒" ,"我知道了", "",this, isAccept -> {
                 });
-                dialog.show();
+                dd.onCreate_Attention_Dialog();
             });
         }
         //*****设置大月份字体
@@ -617,7 +573,7 @@ public class family extends AppCompatActivity {
         }
         Date currentDate = new Date();
         // 设置日期格式
-        SimpleDateFormat sdf = new SimpleDateFormat("M月dd日", Locale.CHINA);
+        SimpleDateFormat sdf = new SimpleDateFormat("y-M-d", Locale.CHINA);
         // 将当前日期转换为指定格式的字符串
         String formattedDate = sdf.format(currentDate);
         for (Task task : tasks) {

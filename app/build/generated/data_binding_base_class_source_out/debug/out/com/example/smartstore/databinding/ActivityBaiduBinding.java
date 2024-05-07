@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.Guideline;
@@ -41,10 +42,19 @@ public final class ActivityBaiduBinding implements ViewBinding {
   public final ImageView imageView2;
 
   @NonNull
+  public final LinearLayout linearLayout25;
+
+  @NonNull
   public final LinearLayout linearLayout3;
 
   @NonNull
   public final LinearLayout linearLayout5;
+
+  @NonNull
+  public final ImageView loading;
+
+  @NonNull
+  public final TextView loading2;
 
   @NonNull
   public final Guideline part31;
@@ -52,7 +62,8 @@ public final class ActivityBaiduBinding implements ViewBinding {
   private ActivityBaiduBinding(@NonNull ScrollView rootView, @NonNull ImageView addNewItemBtn,
       @NonNull LinearLayout container1, @NonNull LinearLayout container2,
       @NonNull ImageView editBtn, @NonNull Button imageEditReturnBtn, @NonNull ImageView imageView2,
-      @NonNull LinearLayout linearLayout3, @NonNull LinearLayout linearLayout5,
+      @NonNull LinearLayout linearLayout25, @NonNull LinearLayout linearLayout3,
+      @NonNull LinearLayout linearLayout5, @NonNull ImageView loading, @NonNull TextView loading2,
       @NonNull Guideline part31) {
     this.rootView = rootView;
     this.addNewItemBtn = addNewItemBtn;
@@ -61,8 +72,11 @@ public final class ActivityBaiduBinding implements ViewBinding {
     this.editBtn = editBtn;
     this.imageEditReturnBtn = imageEditReturnBtn;
     this.imageView2 = imageView2;
+    this.linearLayout25 = linearLayout25;
     this.linearLayout3 = linearLayout3;
     this.linearLayout5 = linearLayout5;
+    this.loading = loading;
+    this.loading2 = loading2;
     this.part31 = part31;
   }
 
@@ -129,6 +143,12 @@ public final class ActivityBaiduBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.linearLayout25;
+      LinearLayout linearLayout25 = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout25 == null) {
+        break missingId;
+      }
+
       id = R.id.linearLayout3;
       LinearLayout linearLayout3 = ViewBindings.findChildViewById(rootView, id);
       if (linearLayout3 == null) {
@@ -141,6 +161,18 @@ public final class ActivityBaiduBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.loading;
+      ImageView loading = ViewBindings.findChildViewById(rootView, id);
+      if (loading == null) {
+        break missingId;
+      }
+
+      id = R.id.loading2;
+      TextView loading2 = ViewBindings.findChildViewById(rootView, id);
+      if (loading2 == null) {
+        break missingId;
+      }
+
       id = R.id.part31;
       Guideline part31 = ViewBindings.findChildViewById(rootView, id);
       if (part31 == null) {
@@ -148,7 +180,8 @@ public final class ActivityBaiduBinding implements ViewBinding {
       }
 
       return new ActivityBaiduBinding((ScrollView) rootView, addNewItemBtn, container1, container2,
-          editBtn, imageEditReturnBtn, imageView2, linearLayout3, linearLayout5, part31);
+          editBtn, imageEditReturnBtn, imageView2, linearLayout25, linearLayout3, linearLayout5,
+          loading, loading2, part31);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

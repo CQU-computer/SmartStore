@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -78,11 +80,20 @@ public class Baidu extends AppCompatActivity {
     private ImageView add_new_item_btn;
     private Button image_edit_return_btn;
     private ImageView  complete;
+    private ImageView loading;
+    private TextView loading2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_baidu);
+
+        loading=findViewById(R.id.loading);
+        loading2 = findViewById(R.id.loading2);
+        Drawable load=loading.getDrawable();
+        AnimationDrawable donghua=(AnimationDrawable)load;
+        donghua.start();
 
         SharedPreferences preference_id = getSharedPreferences("config", Context.MODE_PRIVATE);
         Current_layout_id =  preference_id.getInt("current_layout_id",-1);
@@ -237,7 +248,8 @@ public class Baidu extends AppCompatActivity {
                                     }});
                                 }
                                 activity.runOnUiThread(() -> {
-
+                                    loading.setVisibility(View.GONE);
+                                    loading2.setVisibility(View.GONE);
                                     for (int k = 0; k < detect_res.size(); k++) {
 
                                         if (k % 2 == 0) {

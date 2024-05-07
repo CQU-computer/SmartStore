@@ -92,6 +92,9 @@ public final class FamilyBinding implements ViewBinding {
   public final ScrollView scrollView5;
 
   @NonNull
+  public final TextView taskLayoutTitle;
+
+  @NonNull
   public final TextView test;
 
   @NonNull
@@ -135,11 +138,11 @@ public final class FamilyBinding implements ViewBinding {
       @NonNull LinearLayout linearLayout15, @NonNull TextView month, @NonNull LinearLayout part1,
       @NonNull LinearLayout part2, @NonNull Guideline part32, @NonNull Guideline part34,
       @NonNull Guideline part35, @NonNull HorizontalScrollView part5,
-      @NonNull ScrollView scrollView5, @NonNull TextView test, @NonNull TextView text1,
-      @NonNull TextView text2, @NonNull TextView twoTOfour, @NonNull TextView twoTOone,
-      @NonNull TextView twoTOthree, @NonNull Button urgentTask, @NonNull ImageView view1,
-      @NonNull ImageView view2, @NonNull ImageView view3, @NonNull ImageView view4,
-      @NonNull ImageView warning) {
+      @NonNull ScrollView scrollView5, @NonNull TextView taskLayoutTitle, @NonNull TextView test,
+      @NonNull TextView text1, @NonNull TextView text2, @NonNull TextView twoTOfour,
+      @NonNull TextView twoTOone, @NonNull TextView twoTOthree, @NonNull Button urgentTask,
+      @NonNull ImageView view1, @NonNull ImageView view2, @NonNull ImageView view3,
+      @NonNull ImageView view4, @NonNull ImageView warning) {
     this.rootView = rootView;
     this.addTask = addTask;
     this.audio = audio;
@@ -163,6 +166,7 @@ public final class FamilyBinding implements ViewBinding {
     this.part35 = part35;
     this.part5 = part5;
     this.scrollView5 = scrollView5;
+    this.taskLayoutTitle = taskLayoutTitle;
     this.test = test;
     this.text1 = text1;
     this.text2 = text2;
@@ -336,6 +340,12 @@ public final class FamilyBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.task_layout_title;
+      TextView taskLayoutTitle = ViewBindings.findChildViewById(rootView, id);
+      if (taskLayoutTitle == null) {
+        break missingId;
+      }
+
       id = R.id.test;
       TextView test = ViewBindings.findChildViewById(rootView, id);
       if (test == null) {
@@ -411,8 +421,8 @@ public final class FamilyBinding implements ViewBinding {
       return new FamilyBinding((ConstraintLayout) rootView, addTask, audio, clearTask,
           containerLayout, date, dateTimeBar, day, guideline, guideline2, guideline3, guidelinex,
           help, imageView13, linearLayout15, month, part1, part2, part32, part34, part35, part5,
-          scrollView5, test, text1, text2, twoTOfour, twoTOone, twoTOthree, urgentTask, view1,
-          view2, view3, view4, warning);
+          scrollView5, taskLayoutTitle, test, text1, text2, twoTOfour, twoTOone, twoTOthree,
+          urgentTask, view1, view2, view3, view4, warning);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

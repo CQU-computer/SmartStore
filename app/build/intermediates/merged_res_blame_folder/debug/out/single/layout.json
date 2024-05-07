@@ -68,10 +68,6 @@
         "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\activity_posting.xml"
     },
     {
-        "merged": "com.example.smartstore.app-mergeDebugResources-42:/layout/family.xml",
-        "source": "com.example.smartstore.app-main-45:/layout/family.xml"
-    },
-    {
         "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\activity_chatting_circle.xml",
         "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\activity_chatting_circle.xml"
     },
@@ -110,6 +106,10 @@
     {
         "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\image_edit.xml",
         "source": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-main-45:\\layout\\image_edit.xml"
+    },
+    {
+        "merged": "com.example.smartstore.app-mergeDebugResources-42:/layout/activity_baidu.xml",
+        "source": "com.example.smartstore.app-main-45:/layout/activity_baidu.xml"
     },
     {
         "merged": "C:\\Users\\zzw15\\.gradle\\daemon\\8.2\\com.example.smartstore.app-mergeDebugResources-42:\\layout\\dialog_user_list.xml",
